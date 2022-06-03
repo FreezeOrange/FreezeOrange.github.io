@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Windows（二进制）安装 - ROS机器人操作系统课程学习</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../01.ROS概述与环境搭建/intro.html"><strong aria-hidden="true">1.</strong> 第一章 ROS概述与环境搭建</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01.ROS概述与环境搭建/Ubuntu debian.html"><strong aria-hidden="true">1.1.</strong> Ubuntu Linux（Debian packages）</a></li><li class="chapter-item expanded "><a href="../01.ROS概述与环境搭建/Windows 二进制.html" class="active"><strong aria-hidden="true">1.2.</strong> Windows（二进制）安装</a></li><li class="chapter-item expanded "><a href="../01.ROS概述与环境搭建/macos.html"><strong aria-hidden="true">1.3.</strong> MacOS（源码）</a></li></ol></li><li class="chapter-item expanded "><a href="../02.ROS2教程/intro.html"><strong aria-hidden="true">2.</strong> 第二章 ROS2教程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02.ROS2教程/初级/配置你的 ROS2 环境.html"><strong aria-hidden="true">2.1.</strong> 配置你的 ROS2 环境</a></li><li class="chapter-item expanded "><a href="../02.ROS2教程/初级/介绍 turtlesim 和 rqt/intro.html"><strong aria-hidden="true">2.2.</strong> 介绍 turtlesim 和 rqt</a></li><li class="chapter-item expanded "><a href="../02.ROS2教程/初级/理解 ROS2 nodes/intro.html"><strong aria-hidden="true">2.3.</strong> 理解 ROS2 nodes</a></li></ol></li><li class="chapter-item expanded "><a href="../03.How-to指南/intro.html"><strong aria-hidden="true">3.</strong> 第三章 How-to指南</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ROS机器人操作系统课程学习</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="windows二进制"><a class="header" href="#windows二进制">Windows(二进制)</a></h1>
+<h2 id="目录"><a class="header" href="#目录">目录</a></h2>
+<ul>
+<li><a href="#%E7%B3%BB%E7%BB%9F%E8%A6%81%E6%B1%82">系统要求</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E5%89%8D%E5%87%86%E5%A4%87">安装前准备</a>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85-chocolatey">安装 chocolatey</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-python">安装 python</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-visual-c-%E5%8F%AF%E5%86%8D%E5%8F%91%E8%A1%8C%E7%BB%84%E4%BB%B6">安装 Visual C++ 可再发行组件</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-openssl">安装 openssl</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-visual-studio%E8%BF%87%E7%A8%8B%E7%9C%81%E7%95%A5">安装 Visual Studio（过程省略）</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-opencv">安装 OpenCV</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-qt5">安装 Qt5</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-rqt-%E4%BE%9D%E8%B5%96">安装 RQt 依赖</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E5%85%B6%E4%BB%96%E4%BE%9D%E8%B5%96">安装其他依赖</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E9%99%84%E5%8A%A0%E7%9A%84-dds-%E5%AE%9E%E7%8E%B0%E5%8F%AF%E9%80%89">安装附加的 DDS 实现（可选）</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%8B%E8%BD%BD-ros2">下载 ROS2</a></li>
+<li><a href="#%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE">环境设置</a></li>
+<li><a href="#%E8%AF%95%E8%AF%95%E5%AE%98%E6%96%B9%E7%9A%84%E4%BE%8B%E5%AD%90">试试官方的例子</a></li>
+</ul>
+<h2 id="系统要求"><a class="header" href="#系统要求">系统要求</a></h2>
+<p>目前只支持 Windows 10。</p>
+<h2 id="安装前准备"><a class="header" href="#安装前准备">安装前准备</a></h2>
+<h3 id="安装-chocolatey"><a class="header" href="#安装-chocolatey">安装 Chocolatey</a></h3>
+<ol>
+<li>
+<p>使用管理员模式打开 <code>PowerShell</code> 程序</p>
+</li>
+<li>
+<p>使用 <code>PowerShell</code> 程序安装</p>
+<ol>
+<li>使用 <code>PowerShell</code> 时，必须确保 <code>Get-ExecutionPolicy</code> 不受限制。我们建议使用 Bypass 策略进行安装，或使用 或 AllSigned 策略以在安装过程中获得更多的安全性。</li>
+<li>运行 <code>Get-ExecutionPolicy</code>，如果返回 <code>Restricted</code>，那么运行 <code>Set-ExecutionPolicy AllSigned</code> 或 <code>Set-ExecutionPolicy Bypass -Scope Process</code></li>
+<li>接着运行下面命令 </li>
+</ol>
+<pre><code class="language-shell">Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+</code></pre>
+</li>
+<li>
+<p>等待几秒钟完成安装</p>
+</li>
+<li>
+<p>如果您没有看到任何错误，就可以使用 <code>choco -?</code> 查看效果</p>
+</li>
+</ol>
+<p>你可以使用 Chocolatey 来安装一些其他的开发工具。</p>
+<h3 id="安装-python"><a class="header" href="#安装-python">安装 Python</a></h3>
+<p>打开命令提示符，输入以下命令通过 Chocolatey 安装 Python:</p>
+<pre><code class="language-shell">choco install -y python --version 3.8.3
+</code></pre>
+<blockquote>
+<p>注意</p>
+<p>一定要安装 3.8 版本的 Python，高于 3.8 版本会引出其他问题！</p>
+</blockquote>
+<h3 id="安装-visual-c-可再发行组件"><a class="header" href="#安装-visual-c-可再发行组件">安装 Visual C++ 可再发行组件</a></h3>
+<p>打开一个命令提示符，输入以下命令通过 Chocolatey 安装它们:</p>
+<pre><code class="language-shell">choco install -y vcredist2013 vcredist140
+</code></pre>
+<h3 id="安装-openssl"><a class="header" href="#安装-openssl">安装 OpenSSL</a></h3>
+<p>从 <a href="https://slproweb.com/products/Win32OpenSSL.html">该页</a> 下载 Win64 OpenSSL v1.1.1o OpenSSL 安装程序。滚动到页面底部，下载 Win64 OpenSSL v1.1.1o。不要下载 Win32 或 Light 版本。</p>
+<p>使用默认参数运行安装程序，因为以下命令假定您使用了默认安装目录。您需要将 <code>C:\Program Files\OpenSSL-Win64\bin\openssl.cfg</code> 设置为 <code>OPENSSL_CONF</code> 环境变量； 还需要将 OpenSSL-Win64 bin 文件夹附加到您的 <code>PATH</code> 环境变量中。</p>
+<h3 id="安装-visual-studio过程省略"><a class="header" href="#安装-visual-studio过程省略">安装 Visual Studio（过程省略）</a></h3>
+<h3 id="安装-opencv"><a class="header" href="#安装-opencv">安装 OpenCV</a></h3>
+<p>有些例子需要安装 OpenCV。</p>
+<p>你可以从 <a href="https://github.com/ros2/ros2/releases/download/OpenCV-archives/OpenCV-3.4.6-vc16.vs2019.zip">https://github.com/ros2/ros2/releases/download/OpenCV-archives/OpenCV-3.4.6-vc16.vs2019.zip</a> 下载 OpenCV 3.4.6的预编译版本。</p>
+<p>假设您将其解压缩到 <code>c:\opencv</code>，在命令提示符上输入以下命令(需要管理员权限) :</p>
+<pre><code class="language-shell">setx /m OpenCV_DIR C:\opencv
+</code></pre>
+<p>因为您使用的是预编译的 ROS 版本，所以我们必须告诉它在哪里可以找到 OpenCV 库。您必须将 <code>c:\opencv\x64\vc16\bin</code> 添加到 PATH 环境变量中。</p>
+<h3 id="安装-qt5"><a class="header" href="#安装-qt5">安装 Qt5</a></h3>
+<p>从 Qt 的网站下载 <a href="https://www.qt.io/offline-installers">5.12.x 离线安装程序</a> 。运行安装程序。确保在 <code>Qt -&gt; Qt 5.12.12</code> 树下选择 <code>MSVC 2017 64-bit</code> 组件。</p>
+<p>最后，在管理员 cmd.exe 窗口中设置这些环境变量。下面的命令假设您将它安装到了 <code>c:\Qt</code> 的默认位置：</p>
+<pre><code class="language-shell">setx /m Qt5_DIR C:\Qt\Qt5.12.12\5.12.12\msvc2017_64
+setx /m QT_QPA_PLATFORM_PLUGIN_PATH C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\plugins\platforms
+</code></pre>
+<blockquote>
+<p>注意</p>
+<p>这个路径可能会根据安装的 MSVC 版本、安装 Qt 的目录以及安装 Qt 的版本而改变。</p>
+</blockquote>
+<h3 id="安装-rqt-依赖"><a class="header" href="#安装-rqt-依赖">安装 RQt 依赖</a></h3>
+<p>要运行 <code>rqt_graph</code>，需要 <a href="https://graphviz.gitlab.io/_pages/Download/Download_windows.html">下载</a> 并安装 <a href="https://graphviz.gitlab.io/">Graphviz</a> 。安装程序将询问是否将 graphviz 添加到 PATH 环境变量，选择将其添加到当前用户或所有用户。</p>
+<h3 id="安装其他依赖"><a class="header" href="#安装其他依赖">安装其他依赖</a></h3>
+<p>在 Chocolatey 包数据库中有一些依赖项是不可用的。为了简化手动安装过程，我们提供必要的 Chocolatey 包。</p>
+<p>由于一些 Chocolatey 包依赖它，我们从安装 CMake 开始</p>
+<pre><code class="language-shell">choco install -y cmake
+</code></pre>
+<p>您需要将 CMake bin 文件夹 <code>c:\Program Files\CMake\bin</code> 附加到 PATH 环境变量中。</p>
+<p>请从 <a href="https://github.com/ros2/choco-packages/releases/latest">这个 GitHub 库</a> 下载这些软件包：</p>
+<ul>
+<li>asio.1.12.1.nupkg</li>
+<li>bullet.3.17.nupkg</li>
+<li>cunit.2.1.3.nupkg</li>
+<li>eigen-3.3.4.nupkg</li>
+<li>tinyxml-usestl.2.6.2.nupkg</li>
+<li>tinyxml2.6.0.0.nupkg</li>
+</ul>
+<p>下载完这些包后，打开一个管理 shell 并执行以下命令:</p>
+<pre><code class="language-shell">choco install -y -s &lt;PATH\TO\DOWNLOADS\&gt; asio cunit eigen tinyxml-usestl tinyxml2 bullet
+</code></pre>
+<p>请用您下载软件包的文件夹替换 <code>&lt;PATH\TO\DOWNLOADS\&gt;</code>。</p>
+<p>升级 pip 和 setuptools：</p>
+<pre><code class="language-shell">pip3 install -U pip setuptools==59.6.0
+</code></pre>
+<p>现在安装一些附加的 python 依赖项:</p>
+<pre><code class="language-shell">pip3 install -U catkin_pkg cryptography empy importlib-metadata lark==1.1.1 lxml matplotlib netifaces numpy opencv-python PyQt5 pillow psutil pycairo pydot pyparsing==2.4.7 pyyaml rosdistro
+</code></pre>
+<p>如果安装速度太慢，可以使用</p>
+<pre><code class="language-shell">pip3 install --proxy=http://[username:password@]proxyserver:port somePackage...
+</code></pre>
+<p>设置代理的方式下载。</p>
+<h3 id="安装附加的-dds-实现可选"><a class="header" href="#安装附加的-dds-实现可选">安装附加的 DDS 实现（可选）</a></h3>
+<p>如果您想使用其他 DDS 或 RTPS 供应商除了默认 —— Fast DDS —— 您可以在 <a href="http://docs.ros.org/en/humble/Installation/DDS-Implementations">这里</a> 找到指令。</p>
+<h2 id="下载-ros2"><a class="header" href="#下载-ros2">下载 ROS2</a></h2>
+<p>官方并没有提供 <code>Humble Hawksbill</code> 的二进制版本，取而代之的是，你可以下载 <a href="http://docs.ros.org/en/humble/Installation/Testing.html#prerelease-binaries">预发布</a> 的二进制文件。</p>
+<ul>
+<li>下载 Windows 的最新包，例如 <code>ros2-package-Windows-amd64.zip</code></li>
+<li>将 zip 文件解压到某个地方（我们假设 <code>c:\dev\ross2_humble</code>）</li>
+</ul>
+<h2 id="环境设置"><a class="header" href="#环境设置">环境设置</a></h2>
+<p>启动一个命令 shell，找到 ROS 2 设置文件来设置工作区:</p>
+<p>如果是 cmd.exe 需要使用下面命令</p>
+<pre><code class="language-shell">call C:\dev\ros2_humble\local_setup.bat
+</code></pre>
+<p>如果是 PowerShell 需要使用下面命令</p>
+<pre><code class="language-shell">C:\dev\ros2_humble\local_setup.ps1
+</code></pre>
+<p>正常情况下，如果前面的命令没有出错，则输出 “系统找不到指定的路径” 就一次。</p>
+<h2 id="试试官方的例子"><a class="header" href="#试试官方的例子">试试官方的例子</a></h2>
+<p>在运行例子之前，我们要先安装 <code>packaging</code> 包：</p>
+<pre><code class="language-shell">pip3 install --upgrade pip
+pip3 install packaging
+</code></pre>
+<blockquote>
+<p>注意</p>
+<p>在官方教程中并没有这一步，但的确需要先安装该依赖。</p>
+</blockquote>
+<p>在一个命令 shell 中，设置上面描述的 ROS2 环境，然后运行一个 c++ <code>talker</code>:</p>
+<pre><code class="language-shell">ros2 run demo_nodes_cpp talker
+</code></pre>
+<p>启动另一个命令 shell 并运行一个 Python <code>listener</code>:</p>
+<pre><code class="language-shell">ros2 run demo_nodes_py listener
+</code></pre>
+<p>你应该看到 <code>talker</code> 说它正在 <code>Publishing</code> 消息，而 <code>listener</code> 说 <code>I heard</code> 那些消息。这将验证 C++ 和 Python api 是否正常工作。万岁！</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../01.ROS概述与环境搭建/Ubuntu debian.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../01.ROS概述与环境搭建/macos.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../01.ROS概述与环境搭建/Ubuntu debian.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../01.ROS概述与环境搭建/macos.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
