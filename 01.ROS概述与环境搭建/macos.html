@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../01.ROS概述与环境搭建/intro.html"><strong aria-hidden="true">1.</strong> 第一章 ROS概述与环境搭建</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01.ROS概述与环境搭建/Ubuntu debian.html"><strong aria-hidden="true">1.1.</strong> Ubuntu Linux（Debian packages）</a></li><li class="chapter-item expanded "><a href="../01.ROS概述与环境搭建/Windows 二进制.html"><strong aria-hidden="true">1.2.</strong> Windows（二进制）安装</a></li><li class="chapter-item expanded "><a href="../01.ROS概述与环境搭建/macos.html" class="active"><strong aria-hidden="true">1.3.</strong> MacOS（源码）</a></li></ol></li><li class="chapter-item expanded "><a href="../02.ROS2教程/intro.html"><strong aria-hidden="true">2.</strong> 第二章 ROS2教程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02.ROS2教程/初级/配置你的 ROS2 环境.html"><strong aria-hidden="true">2.1.</strong> 配置你的 ROS2 环境</a></li><li class="chapter-item expanded "><a href="../02.ROS2教程/初级/介绍 turtlesim 和 rqt/intro.html"><strong aria-hidden="true">2.2.</strong> 介绍 turtlesim 和 rqt</a></li><li class="chapter-item expanded "><a href="../02.ROS2教程/初级/理解 ROS2 nodes/intro.html"><strong aria-hidden="true">2.3.</strong> 理解 ROS2 nodes</a></li></ol></li><li class="chapter-item expanded "><a href="../03.How-to指南/intro.html"><strong aria-hidden="true">3.</strong> 第三章 How-to指南</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../01.ROS概述与环境搭建/intro.html"><strong aria-hidden="true">1.</strong> 第一章 ROS概述与环境搭建</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01.ROS概述与环境搭建/Ubuntu debian.html"><strong aria-hidden="true">1.1.</strong> Ubuntu Linux（Debian packages）</a></li><li class="chapter-item expanded "><a href="../01.ROS概述与环境搭建/Windows 二进制.html"><strong aria-hidden="true">1.2.</strong> Windows（二进制）</a></li><li class="chapter-item expanded "><a href="../01.ROS概述与环境搭建/macos.html" class="active"><strong aria-hidden="true">1.3.</strong> MacOS（源码）</a></li></ol></li><li class="chapter-item expanded "><a href="../02.ROS2教程/intro.html"><strong aria-hidden="true">2.</strong> 第二章 ROS2教程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02.ROS2教程/初级/配置你的 ROS2 环境.html"><strong aria-hidden="true">2.1.</strong> 配置你的 ROS2 环境</a></li><li class="chapter-item expanded "><a href="../02.ROS2教程/初级/介绍 turtlesim 和 rqt/intro.html"><strong aria-hidden="true">2.2.</strong> 介绍 turtlesim 和 rqt</a></li><li class="chapter-item expanded "><a href="../02.ROS2教程/初级/理解 ROS2 nodes/intro.html"><strong aria-hidden="true">2.3.</strong> 理解 ROS2 nodes</a></li><li class="chapter-item expanded "><a href="../02.ROS2教程/初级/理解 ROS2 topics/intro.html"><strong aria-hidden="true">2.4.</strong> 理解 ROS2 topics</a></li><li class="chapter-item expanded "><a href="../02.ROS2教程/初级/理解 ROS2 services/intro.html"><strong aria-hidden="true">2.5.</strong> 理解 ROS2 services</a></li><li class="chapter-item expanded "><a href="../02.ROS2教程/初级/理解 ROS2 parameters/intro.html"><strong aria-hidden="true">2.6.</strong> 理解 ROS2 parameters</a></li><li class="chapter-item expanded "><a href="../02.ROS2教程/初级/理解 ROS2 actions/intro.html"><strong aria-hidden="true">2.7.</strong> 理解 ROS2 actions</a></li><li class="chapter-item expanded "><a href="../02.ROS2教程/初级/使用 rqt_console/intro.html"><strong aria-hidden="true">2.8.</strong> 使用 rqt_console</a></li><li class="chapter-item expanded "><a href="../02.ROS2教程/初级/介绍 ROS2 launch/intro.html"><strong aria-hidden="true">2.9.</strong> 介绍 ROS2 launch</a></li></ol></li><li class="chapter-item expanded "><a href="../03.How-to指南/intro.html"><strong aria-hidden="true">3.</strong> 第三章 How-to指南</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -143,7 +143,163 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="macos源码"><a class="header" href="#macos源码">MacOS（源码）</a></h1>
-<p><a href="http://docs.ros.org/en/humble/Installation/Alternatives/macOS-Development-Setup.html">todo</a></p>
+<h2 id="目录"><a class="header" href="#目录">目录</a></h2>
+<ul>
+<li><a href="#%E7%B3%BB%E7%BB%9F%E8%A6%81%E6%B1%82">系统要求</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E5%87%86%E5%A4%87">安装准备</a></li>
+<li><a href="#%E7%A6%81%E7%94%A8-system-integrity-protection-sip">禁用 System Integrity Protection (SIP)</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96-ros2-%E6%BA%90%E7%A0%81">获取 ROS2 源码</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E9%A2%9D%E5%A4%96%E7%9A%84-dds-%E4%BE%9B%E5%BA%94%E5%95%86%E5%8F%AF%E9%80%89">安装额外的 DDS 供应商（可选）</a></li>
+<li><a href="#%E7%BC%96%E8%AF%91-ros2-%E6%BA%90%E7%A0%81">编译 ROS2 源码</a></li>
+<li><a href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">环境配置</a></li>
+<li><a href="#%E8%AF%95%E8%AF%95%E5%AE%98%E6%96%B9%E7%9A%84%E4%BE%8B%E5%AD%90">试试官方的例子</a></li>
+</ul>
+<h2 id="系统要求"><a class="header" href="#系统要求">系统要求</a></h2>
+<p>macOS Mojave（10.14）</p>
+<h2 id="安装准备"><a class="header" href="#安装准备">安装准备</a></h2>
+<ol>
+<li>
+<p><strong>Xcode</strong></p>
+</li>
+<li>
+<p><strong>brew</strong></p>
+<ol>
+<li>根据 <a href="http://brew.sh/">http://brew.sh/</a> 上的要求安装</li>
+<li>检查 <code>brew</code> 是否可用
+<pre><code class="language-shell">brew doctor
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>使用 <code>brew</code> 安装其他依赖：</p>
+<pre><code class="language-shell">brew install bullet cmake cppcheck eigen pcre poco python tinyxml wget
+
+# install dependencies for Fast-RTPS if you are using it
+brew install asio tinyxml2
+
+brew install opencv
+
+# install console_bridge for rosbag2
+brew install console_bridge
+
+# install OpenSSL for DDS-Security
+brew install openssl@1.1
+# if you are using Bash, then replace '.zshrc' with '.bashrc'
+echo &quot;export OPENSSL_ROOT_DIR=$(brew --prefix openssl@1.1)&quot; &gt;&gt; ~/.zshrc
+
+# install dependencies for rcl_logging
+brew install spdlog
+
+# install dependencies for Cyclone DDS
+brew install bison cunit
+</code></pre>
+</li>
+<li>
+<p>安装 rviz 的依赖</p>
+<pre><code class="language-shell"># install dependencies for Rviz
+brew install qt@5 freetype assimp
+
+# Add the Qt directory to the PATH and CMAKE_PREFIX_PATH
+echo &quot;export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:/usr/local/opt/qt@5&quot; &gt;&gt; ~/.zshrc
+echo &quot;export PATH=$PATH:/usr/local/opt/qt@5/bin&quot; &gt;&gt; ~/.zshrc
+</code></pre>
+</li>
+<li>
+<p>安装 rqt 的依赖</p>
+<pre><code class="language-shell">brew install graphviz pyqt5 sip
+</code></pre>
+</li>
+<li>
+<p>使用 pip3 安装 Python 依赖库：</p>
+<pre><code class="language-shell">pip3 install -U \
+argcomplete catkin_pkg colcon-common-extensions coverage \
+cryptography empy flake8 flake8-blind-except==0.1.1 flake8-builtins \
+flake8-class-newline flake8-comprehensions flake8-deprecated \
+flake8-docstrings flake8-import-order flake8-quotes \
+importlib-metadata lark==1.1.1 lxml matplotlib mock mypy==0.931 netifaces \
+nose pep8 psutil pydocstyle pydot pygraphviz pyparsing==2.4.7 \
+pytest-mock rosdep rosdistro setuptools==59.6.0 vcstool
+</code></pre>
+<p>如果安装速度太慢，可以使用</p>
+<pre><code class="language-shell">pip3 install --proxy=http://[username:password@]proxyserver:port somePackage...
+</code></pre>
+<p>设置代理的方式下载。</p>
+<p>另外，编译 cryptography 和 pygraphviz 时找不到头文件，所以编译时需要先运行下面命令：</p>
+<pre><code class="language-shell">export CPPFLAGS=&quot;-I/usr/local/opt/openssl@1.1/include -I/usr/local/include&quot;
+export LDFLAGS=&quot;-L/usr/local/opt/openssl@1.1/lib -L/usr/local/lib&quot;
+</code></pre>
+<p>这样 pip3 在安装时就不会报错了。</p>
+<p>另外，请确保 <code>$PATH</code> 环境变量包含二进制文件的安装位置（默认值: $HOME/Library/Python/<version>/bin）。</p>
+</li>
+<li>
+<p>（可选）如果您想构建 ROS1 &lt;-&gt; ROS2 桥，那么您还必须安装 ROS1:</p>
+<ul>
+<li>从正常的安装说明开始:
+<a href="http://wiki.ros.org/kinetic/Installation/OSX/Homebrew/Source">http://wiki.ros.org/kinetic/Installation/OSX/Homebrew/Source</a></li>
+<li>当你进入到调用 <code>rosinstall_generator</code> 获取源代码的步骤时，这里有一个替代调用，它带来了生成一个有用的桥接所需的最低要求:
+<pre><code class="language-shell">rosinstall_generator catkin common_msgs roscpp rosmsg --rosdistro kinetic --deps --wet-only --tar &gt; kinetic-ros2-bridge-deps.rosinstall
+wstool init -j8 src kinetic-ros2-bridge-deps.rosinstall
+</code></pre>
+</li>
+</ul>
+<p>否则，只需遵循正常的指示，然后在继续这里构建 ROS2 之前，先启用 <code>install_isolated/setup.bash</code> 文件。</p>
+</li>
+</ol>
+<h2 id="禁用-system-integrity-protection-sip"><a class="header" href="#禁用-system-integrity-protection-sip">禁用 System Integrity Protection (SIP)</a></h2>
+<p>macOS/OS x 版本 &gt;= 10.11 默认启用了系统完整性保护。因此，SIP 不会阻止进程继承动态链接器环境变量，如 <code>DYLD_LIBRARY_PATH</code>。</p>
+<p>可以使用 csrutil(1) 命令配置系统完整性保护。</p>
+<p>通过在终端中运行以下命令，您可以检查系统完整性保护当前是否启用:</p>
+<pre><code class="language-shell">&gt; csrutil status
+System Integrity Protection status: enabled.
+</code></pre>
+<p>要启用或禁用系统完整性保护，您必须启动到恢复操作系统，并从终端运行 csrutil(1) 命令：</p>
+<ol>
+<li>通过重新启动机器并在启动时按住 Command 和 R 键启动恢复操作系统。</li>
+<li>从“实用工具”菜单中启动终端。</li>
+<li>输入以下命令: <code>csrutil enable</code> 或者 <code>csrutil disable</code></li>
+</ol>
+<p>启用或禁用计算机上的系统完整性保护后，需要重新启动。</p>
+<h2 id="获取-ros2-源码"><a class="header" href="#获取-ros2-源码">获取 ROS2 源码</a></h2>
+<p>创建一个工作空间并克隆所有:</p>
+<pre><code class="language-shell">mkdir -p ~/ros2_humble/src
+cd ~/ros2_humble
+wget https://raw.githubusercontent.com/ros2/ros2/humble/ros2.repos
+vcs import src &lt; ros2.repos
+</code></pre>
+<h2 id="安装额外的-dds-供应商可选"><a class="header" href="#安装额外的-dds-供应商可选">安装额外的 DDS 供应商（可选）</a></h2>
+<p>如果您想使用除了默认的以外其他的 DDS 或 RTPS 供应商，您可以在 <a href="http://docs.ros.org/en/humble/Installation/DDS-Implementations.html">这里</a> 找到相关信息。</p>
+<h2 id="编译-ros2-源码"><a class="header" href="#编译-ros2-源码">编译 ROS2 源码</a></h2>
+<p>运行 colcon 工具来构建所有内容:</p>
+<pre><code class="language-shell">cd ~/ros2_humble/
+colcon build --symlink-install --packages-skip-by-dep python_qt_binding
+</code></pre>
+<blockquote>
+<p>注意</p>
+<p>如果系统中上既有 Qt6 又有 Qt5，需要将 Qt6 的头文件从系统路径中去除，否则会引起问题。</p>
+</blockquote>
+<h2 id="环境配置"><a class="header" href="#环境配置">环境配置</a></h2>
+<p>如果使用 bash 则输入下面命令：</p>
+<pre><code class="language-shell">. ~/ros2_humble/install/setup.bash
+</code></pre>
+<p>因为现在 Mac 默认使用 zsh，所以替换为下面命令：</p>
+<pre><code class="language-shell">. ~/ros2_humble/install/setup.zsh
+</code></pre>
+<p>这将自动为所有为其构建支持的 DDS 供应商设置环境。</p>
+<p>如果不想每次打开 shell 窗口时都输入一遍可以：</p>
+<pre><code class="language-shell">echo &quot;source ~/ros2_humble/install/setup.bash&quot; &gt;&gt; ~/.bashrc
+</code></pre>
+<p>或</p>
+<pre><code class="language-shell">echo &quot;source ~/ros2_humble/install/setup.zsh&quot; &gt;&gt; ~/.zshrc
+</code></pre>
+<h2 id="试试官方的例子"><a class="header" href="#试试官方的例子">试试官方的例子</a></h2>
+<p>在一个命令 shell 中，设置上面描述的 ROS2 环境，然后运行一个 c++ <code>talker</code>:</p>
+<pre><code class="language-shell">ros2 run demo_nodes_cpp talker
+</code></pre>
+<p>启动另一个命令 shell 并运行一个 Python <code>listener</code>:</p>
+<pre><code class="language-shell">ros2 run demo_nodes_py listener
+</code></pre>
+<p>你应该看到 <code>talker</code> 说它正在 <code>Publishing</code> 消息，而 <code>listener</code> 说 <code>I heard</code> 那些消息。这将验证 C++ 和 Python api 是否正常工作。万岁！</p>
 
                     </main>
 

@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="01.ROS概述与环境搭建/intro.html"><strong aria-hidden="true">1.</strong> 第一章 ROS概述与环境搭建</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01.ROS概述与环境搭建/Ubuntu debian.html"><strong aria-hidden="true">1.1.</strong> Ubuntu Linux（Debian packages）</a></li><li class="chapter-item expanded "><a href="01.ROS概述与环境搭建/Windows 二进制.html"><strong aria-hidden="true">1.2.</strong> Windows（二进制）安装</a></li><li class="chapter-item expanded "><a href="01.ROS概述与环境搭建/macos.html"><strong aria-hidden="true">1.3.</strong> MacOS（源码）</a></li></ol></li><li class="chapter-item expanded "><a href="02.ROS2教程/intro.html"><strong aria-hidden="true">2.</strong> 第二章 ROS2教程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02.ROS2教程/初级/配置你的 ROS2 环境.html"><strong aria-hidden="true">2.1.</strong> 配置你的 ROS2 环境</a></li><li class="chapter-item expanded "><a href="02.ROS2教程/初级/介绍 turtlesim 和 rqt/intro.html"><strong aria-hidden="true">2.2.</strong> 介绍 turtlesim 和 rqt</a></li><li class="chapter-item expanded "><a href="02.ROS2教程/初级/理解 ROS2 nodes/intro.html"><strong aria-hidden="true">2.3.</strong> 理解 ROS2 nodes</a></li></ol></li><li class="chapter-item expanded "><a href="03.How-to指南/intro.html"><strong aria-hidden="true">3.</strong> 第三章 How-to指南</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="01.ROS概述与环境搭建/intro.html"><strong aria-hidden="true">1.</strong> 第一章 ROS概述与环境搭建</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01.ROS概述与环境搭建/Ubuntu debian.html"><strong aria-hidden="true">1.1.</strong> Ubuntu Linux（Debian packages）</a></li><li class="chapter-item expanded "><a href="01.ROS概述与环境搭建/Windows 二进制.html"><strong aria-hidden="true">1.2.</strong> Windows（二进制）</a></li><li class="chapter-item expanded "><a href="01.ROS概述与环境搭建/macos.html"><strong aria-hidden="true">1.3.</strong> MacOS（源码）</a></li></ol></li><li class="chapter-item expanded "><a href="02.ROS2教程/intro.html"><strong aria-hidden="true">2.</strong> 第二章 ROS2教程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02.ROS2教程/初级/配置你的 ROS2 环境.html"><strong aria-hidden="true">2.1.</strong> 配置你的 ROS2 环境</a></li><li class="chapter-item expanded "><a href="02.ROS2教程/初级/介绍 turtlesim 和 rqt/intro.html"><strong aria-hidden="true">2.2.</strong> 介绍 turtlesim 和 rqt</a></li><li class="chapter-item expanded "><a href="02.ROS2教程/初级/理解 ROS2 nodes/intro.html"><strong aria-hidden="true">2.3.</strong> 理解 ROS2 nodes</a></li><li class="chapter-item expanded "><a href="02.ROS2教程/初级/理解 ROS2 topics/intro.html"><strong aria-hidden="true">2.4.</strong> 理解 ROS2 topics</a></li><li class="chapter-item expanded "><a href="02.ROS2教程/初级/理解 ROS2 services/intro.html"><strong aria-hidden="true">2.5.</strong> 理解 ROS2 services</a></li><li class="chapter-item expanded "><a href="02.ROS2教程/初级/理解 ROS2 parameters/intro.html"><strong aria-hidden="true">2.6.</strong> 理解 ROS2 parameters</a></li><li class="chapter-item expanded "><a href="02.ROS2教程/初级/理解 ROS2 actions/intro.html"><strong aria-hidden="true">2.7.</strong> 理解 ROS2 actions</a></li><li class="chapter-item expanded "><a href="02.ROS2教程/初级/使用 rqt_console/intro.html"><strong aria-hidden="true">2.8.</strong> 使用 rqt_console</a></li><li class="chapter-item expanded "><a href="02.ROS2教程/初级/介绍 ROS2 launch/intro.html"><strong aria-hidden="true">2.9.</strong> 介绍 ROS2 launch</a></li></ol></li><li class="chapter-item expanded "><a href="03.How-to指南/intro.html"><strong aria-hidden="true">3.</strong> 第三章 How-to指南</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -150,8 +150,8 @@
 <h3 id="1-ros的性能特色"><a class="header" href="#1-ros的性能特色">1. ROS的性能特色</a></h3>
 <p>ROS是一个机器人领域的元操作系统。也就是说，它并不是真正意义上的操作系统，其底层的任务调度、编译、设备驱动等还是由它的原生操作系统Ubuntu Linux完成。</p>
 <p><strong>ROS实际上是运行在Ubuntu Linux上的亚操作系统</strong>，或者说软件框架，但提供硬件抽象、函数调用、进程管理这些类似操作系统的功能，也提供用于获取、编译、跨平台的函数和工具。</p>
-<p><strong>ROS的核心思想就是将机器人的软件功能做成一个个节点，节点之间通过互相发送消息进行沟通</strong>。这些节点可以部署在同一台主机上，也可以部署在不同主机上，甚至还可以部署在互联网上。ROS网络通信机制中的主节点（master）负责对网络中各个节点之间的通信过程进行管理调度，同时提供一个用于配置网络中全局参数的服务。</p>
-<p>ROS是松耦合软件框架，利用分布式通信机制实现节点间的进程通信。ROS的软件代码以松耦合方式组织，开发过程灵活，管理维护方便。</p>
+<p><strong>ROS的核心思想就是将机器人的软件功能做成一个个 node，nodes 之间通过互相发送消息进行沟通</strong>。这些节点可以部署在同一台主机上，也可以部署在不同主机上，甚至还可以部署在互联网上。ROS网络通信机制中的主节点（master）负责对网络中各个节点之间的通信过程进行管理调度，同时提供一个用于配置网络中全局参数的服务。</p>
+<p>ROS是松耦合软件框架，利用分布式通信机制实现 nodes 间的进程通信。ROS的软件代码以松耦合方式组织，开发过程灵活，管理维护方便。</p>
 <p>ROS具有丰富的开源功能库。ROS是基于BSD（Berkeley Software Distribution，伯克利软件发行）协议的开源软件，允许任何人修改、重用、重发布以及在商业和闭源产品中使用，使用ROS能够快捷地搭建自己的机器人原型。</p>
 <h3 id="2-ros-2-vs-ros-1"><a class="header" href="#2-ros-2-vs-ros-1">2. ROS 2 vs ROS 1</a></h3>
 <p>自从2007年开始，机器人技术和机器人技术界发生了很大的变化。ROS 2项目的目标是适应这些变化，利用ROS 1的优点，改进不足之处。</p>
@@ -324,7 +324,163 @@ pip3 install packaging
 </code></pre>
 <p>你应该看到 <code>talker</code> 说它正在 <code>Publishing</code> 消息，而 <code>listener</code> 说 <code>I heard</code> 那些消息。这将验证 C++ 和 Python api 是否正常工作。万岁！</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="macos源码"><a class="header" href="#macos源码">MacOS（源码）</a></h1>
-<p><a href="http://docs.ros.org/en/humble/Installation/Alternatives/macOS-Development-Setup.html">todo</a></p>
+<h2 id="目录-1"><a class="header" href="#目录-1">目录</a></h2>
+<ul>
+<li><a href="01.ROS%E6%A6%82%E8%BF%B0%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/macos.html#%E7%B3%BB%E7%BB%9F%E8%A6%81%E6%B1%82">系统要求</a></li>
+<li><a href="01.ROS%E6%A6%82%E8%BF%B0%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/macos.html#%E5%AE%89%E8%A3%85%E5%87%86%E5%A4%87">安装准备</a></li>
+<li><a href="01.ROS%E6%A6%82%E8%BF%B0%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/macos.html#%E7%A6%81%E7%94%A8-system-integrity-protection-sip">禁用 System Integrity Protection (SIP)</a></li>
+<li><a href="01.ROS%E6%A6%82%E8%BF%B0%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/macos.html#%E8%8E%B7%E5%8F%96-ros2-%E6%BA%90%E7%A0%81">获取 ROS2 源码</a></li>
+<li><a href="01.ROS%E6%A6%82%E8%BF%B0%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/macos.html#%E5%AE%89%E8%A3%85%E9%A2%9D%E5%A4%96%E7%9A%84-dds-%E4%BE%9B%E5%BA%94%E5%95%86%E5%8F%AF%E9%80%89">安装额外的 DDS 供应商（可选）</a></li>
+<li><a href="01.ROS%E6%A6%82%E8%BF%B0%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/macos.html#%E7%BC%96%E8%AF%91-ros2-%E6%BA%90%E7%A0%81">编译 ROS2 源码</a></li>
+<li><a href="01.ROS%E6%A6%82%E8%BF%B0%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/macos.html#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">环境配置</a></li>
+<li><a href="01.ROS%E6%A6%82%E8%BF%B0%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/macos.html#%E8%AF%95%E8%AF%95%E5%AE%98%E6%96%B9%E7%9A%84%E4%BE%8B%E5%AD%90">试试官方的例子</a></li>
+</ul>
+<h2 id="系统要求-1"><a class="header" href="#系统要求-1">系统要求</a></h2>
+<p>macOS Mojave（10.14）</p>
+<h2 id="安装准备"><a class="header" href="#安装准备">安装准备</a></h2>
+<ol>
+<li>
+<p><strong>Xcode</strong></p>
+</li>
+<li>
+<p><strong>brew</strong></p>
+<ol>
+<li>根据 <a href="http://brew.sh/">http://brew.sh/</a> 上的要求安装</li>
+<li>检查 <code>brew</code> 是否可用
+<pre><code class="language-shell">brew doctor
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>使用 <code>brew</code> 安装其他依赖：</p>
+<pre><code class="language-shell">brew install bullet cmake cppcheck eigen pcre poco python tinyxml wget
+
+# install dependencies for Fast-RTPS if you are using it
+brew install asio tinyxml2
+
+brew install opencv
+
+# install console_bridge for rosbag2
+brew install console_bridge
+
+# install OpenSSL for DDS-Security
+brew install openssl@1.1
+# if you are using Bash, then replace '.zshrc' with '.bashrc'
+echo &quot;export OPENSSL_ROOT_DIR=$(brew --prefix openssl@1.1)&quot; &gt;&gt; ~/.zshrc
+
+# install dependencies for rcl_logging
+brew install spdlog
+
+# install dependencies for Cyclone DDS
+brew install bison cunit
+</code></pre>
+</li>
+<li>
+<p>安装 rviz 的依赖</p>
+<pre><code class="language-shell"># install dependencies for Rviz
+brew install qt@5 freetype assimp
+
+# Add the Qt directory to the PATH and CMAKE_PREFIX_PATH
+echo &quot;export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:/usr/local/opt/qt@5&quot; &gt;&gt; ~/.zshrc
+echo &quot;export PATH=$PATH:/usr/local/opt/qt@5/bin&quot; &gt;&gt; ~/.zshrc
+</code></pre>
+</li>
+<li>
+<p>安装 rqt 的依赖</p>
+<pre><code class="language-shell">brew install graphviz pyqt5 sip
+</code></pre>
+</li>
+<li>
+<p>使用 pip3 安装 Python 依赖库：</p>
+<pre><code class="language-shell">pip3 install -U \
+argcomplete catkin_pkg colcon-common-extensions coverage \
+cryptography empy flake8 flake8-blind-except==0.1.1 flake8-builtins \
+flake8-class-newline flake8-comprehensions flake8-deprecated \
+flake8-docstrings flake8-import-order flake8-quotes \
+importlib-metadata lark==1.1.1 lxml matplotlib mock mypy==0.931 netifaces \
+nose pep8 psutil pydocstyle pydot pygraphviz pyparsing==2.4.7 \
+pytest-mock rosdep rosdistro setuptools==59.6.0 vcstool
+</code></pre>
+<p>如果安装速度太慢，可以使用</p>
+<pre><code class="language-shell">pip3 install --proxy=http://[username:password@]proxyserver:port somePackage...
+</code></pre>
+<p>设置代理的方式下载。</p>
+<p>另外，编译 cryptography 和 pygraphviz 时找不到头文件，所以编译时需要先运行下面命令：</p>
+<pre><code class="language-shell">export CPPFLAGS=&quot;-I/usr/local/opt/openssl@1.1/include -I/usr/local/include&quot;
+export LDFLAGS=&quot;-L/usr/local/opt/openssl@1.1/lib -L/usr/local/lib&quot;
+</code></pre>
+<p>这样 pip3 在安装时就不会报错了。</p>
+<p>另外，请确保 <code>$PATH</code> 环境变量包含二进制文件的安装位置（默认值: $HOME/Library/Python/<version>/bin）。</p>
+</li>
+<li>
+<p>（可选）如果您想构建 ROS1 &lt;-&gt; ROS2 桥，那么您还必须安装 ROS1:</p>
+<ul>
+<li>从正常的安装说明开始:
+<a href="http://wiki.ros.org/kinetic/Installation/OSX/Homebrew/Source">http://wiki.ros.org/kinetic/Installation/OSX/Homebrew/Source</a></li>
+<li>当你进入到调用 <code>rosinstall_generator</code> 获取源代码的步骤时，这里有一个替代调用，它带来了生成一个有用的桥接所需的最低要求:
+<pre><code class="language-shell">rosinstall_generator catkin common_msgs roscpp rosmsg --rosdistro kinetic --deps --wet-only --tar &gt; kinetic-ros2-bridge-deps.rosinstall
+wstool init -j8 src kinetic-ros2-bridge-deps.rosinstall
+</code></pre>
+</li>
+</ul>
+<p>否则，只需遵循正常的指示，然后在继续这里构建 ROS2 之前，先启用 <code>install_isolated/setup.bash</code> 文件。</p>
+</li>
+</ol>
+<h2 id="禁用-system-integrity-protection-sip"><a class="header" href="#禁用-system-integrity-protection-sip">禁用 System Integrity Protection (SIP)</a></h2>
+<p>macOS/OS x 版本 &gt;= 10.11 默认启用了系统完整性保护。因此，SIP 不会阻止进程继承动态链接器环境变量，如 <code>DYLD_LIBRARY_PATH</code>。</p>
+<p>可以使用 csrutil(1) 命令配置系统完整性保护。</p>
+<p>通过在终端中运行以下命令，您可以检查系统完整性保护当前是否启用:</p>
+<pre><code class="language-shell">&gt; csrutil status
+System Integrity Protection status: enabled.
+</code></pre>
+<p>要启用或禁用系统完整性保护，您必须启动到恢复操作系统，并从终端运行 csrutil(1) 命令：</p>
+<ol>
+<li>通过重新启动机器并在启动时按住 Command 和 R 键启动恢复操作系统。</li>
+<li>从“实用工具”菜单中启动终端。</li>
+<li>输入以下命令: <code>csrutil enable</code> 或者 <code>csrutil disable</code></li>
+</ol>
+<p>启用或禁用计算机上的系统完整性保护后，需要重新启动。</p>
+<h2 id="获取-ros2-源码"><a class="header" href="#获取-ros2-源码">获取 ROS2 源码</a></h2>
+<p>创建一个工作空间并克隆所有:</p>
+<pre><code class="language-shell">mkdir -p ~/ros2_humble/src
+cd ~/ros2_humble
+wget https://raw.githubusercontent.com/ros2/ros2/humble/ros2.repos
+vcs import src &lt; ros2.repos
+</code></pre>
+<h2 id="安装额外的-dds-供应商可选"><a class="header" href="#安装额外的-dds-供应商可选">安装额外的 DDS 供应商（可选）</a></h2>
+<p>如果您想使用除了默认的以外其他的 DDS 或 RTPS 供应商，您可以在 <a href="http://docs.ros.org/en/humble/Installation/DDS-Implementations.html">这里</a> 找到相关信息。</p>
+<h2 id="编译-ros2-源码"><a class="header" href="#编译-ros2-源码">编译 ROS2 源码</a></h2>
+<p>运行 colcon 工具来构建所有内容:</p>
+<pre><code class="language-shell">cd ~/ros2_humble/
+colcon build --symlink-install --packages-skip-by-dep python_qt_binding
+</code></pre>
+<blockquote>
+<p>注意</p>
+<p>如果系统中上既有 Qt6 又有 Qt5，需要将 Qt6 的头文件从系统路径中去除，否则会引起问题。</p>
+</blockquote>
+<h2 id="环境配置"><a class="header" href="#环境配置">环境配置</a></h2>
+<p>如果使用 bash 则输入下面命令：</p>
+<pre><code class="language-shell">. ~/ros2_humble/install/setup.bash
+</code></pre>
+<p>因为现在 Mac 默认使用 zsh，所以替换为下面命令：</p>
+<pre><code class="language-shell">. ~/ros2_humble/install/setup.zsh
+</code></pre>
+<p>这将自动为所有为其构建支持的 DDS 供应商设置环境。</p>
+<p>如果不想每次打开 shell 窗口时都输入一遍可以：</p>
+<pre><code class="language-shell">echo &quot;source ~/ros2_humble/install/setup.bash&quot; &gt;&gt; ~/.bashrc
+</code></pre>
+<p>或</p>
+<pre><code class="language-shell">echo &quot;source ~/ros2_humble/install/setup.zsh&quot; &gt;&gt; ~/.zshrc
+</code></pre>
+<h2 id="试试官方的例子-1"><a class="header" href="#试试官方的例子-1">试试官方的例子</a></h2>
+<p>在一个命令 shell 中，设置上面描述的 ROS2 环境，然后运行一个 c++ <code>talker</code>:</p>
+<pre><code class="language-shell">ros2 run demo_nodes_cpp talker
+</code></pre>
+<p>启动另一个命令 shell 并运行一个 Python <code>listener</code>:</p>
+<pre><code class="language-shell">ros2 run demo_nodes_py listener
+</code></pre>
+<p>你应该看到 <code>talker</code> 说它正在 <code>Publishing</code> 消息，而 <code>listener</code> 说 <code>I heard</code> 那些消息。这将验证 C++ 和 Python api 是否正常工作。万岁！</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="教程"><a class="header" href="#教程">教程</a></h1>
 <p>学习教程的最好方法是按顺序首次遍历它们，因为它们是相互依存的，也并不是全面的文档。</p>
 <p>有关更具体问题的快速解决方案，请参见 <a href="02.ROS2%E6%95%99%E7%A8%8B/../03.How-to%E6%8C%87%E5%8D%97/intro.html">How-to 指南</a> 。</p>
@@ -334,12 +490,12 @@ pip3 install packaging
 <li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E9%85%8D%E7%BD%AE%E4%BD%A0%E7%9A%84%20ROS2%20%E7%8E%AF%E5%A2%83.html">配置你的 ROS2 环境</a></li>
 <li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BB%8B%E7%BB%8D%20turtlesim%20%E5%92%8C%20rqt/intro.html">介绍 turtlesim 和 rqt</a></li>
 <li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20nodes/intro.html">理解 ROS2 nodes</a></li>
-<li>理解 ROS2 topics</li>
-<li>理解 ROS2 services</li>
-<li>理解 ROS2 parameters</li>
-<li>理解 ROS2 actions</li>
-<li>使用 rqt_console</li>
-<li>介绍 ROS2 launch</li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/intro.html">理解 ROS2 topics</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20services/intro.html">理解 ROS2 services</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20parameters/intro.html">理解 ROS2 parameters</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20actions/intro.html">理解 ROS2 actions</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BD%BF%E7%94%A8%20rqt_console/intro.html">使用 rqt_console</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BB%8B%E7%BB%8D%20ROS2%20launch/intro.html">介绍 ROS2 launch</a></li>
 <li>录制和播放数据</li>
 </ul>
 <h3 id="客户端库"><a class="header" href="#客户端库">客户端库</a></h3>
@@ -376,8 +532,8 @@ pip3 install packaging
 <li>使用 Fast DDS Discovery Server 作为发现协议</li>
 <li>实现一个自定义的内存分配器</li>
 <li>释放 Fast DDS 作为 ROS2 中间件的所有的潜能</li>
-<li>从您自己的节点记录一个包（C++）</li>
-<li>从您自己的节点记录一个包（Python）</li>
+<li>从您自己的 node 记录一个包（C++）</li>
+<li>从您自己的 node 记录一个包（Python）</li>
 </ul>
 <h2 id="仿真器"><a class="header" href="#仿真器">仿真器</a></h2>
 <ul>
@@ -418,10 +574,10 @@ pip3 install packaging
 <li>Python 和 C++ 最小的例子</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="配置你的-ros2-环境"><a class="header" href="#配置你的-ros2-环境">配置你的 ROS2 环境</a></h1>
-<h2 id="目录-1"><a class="header" href="#目录-1">目录</a></h2>
+<h2 id="目录-2"><a class="header" href="#目录-2">目录</a></h2>
 <ul>
 <li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E9%85%8D%E7%BD%AE%E4%BD%A0%E7%9A%84%20ROS2%20%E7%8E%AF%E5%A2%83.html#%E8%83%8C%E6%99%AF">背景</a></li>
-<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E9%85%8D%E7%BD%AE%E4%BD%A0%E7%9A%84%20ROS2%20%E7%8E%AF%E5%A2%83.html#%E5%89%8D%E6%8F%90">前提</a>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E9%85%8D%E7%BD%AE%E4%BD%A0%E7%9A%84%20ROS2%20%E7%8E%AF%E5%A2%83.html#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a>
 <ul>
 <li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E9%85%8D%E7%BD%AE%E4%BD%A0%E7%9A%84%20ROS2%20%E7%8E%AF%E5%A2%83.html#1-%E5%90%AF%E7%94%A8%E5%AE%89%E8%A3%85%E6%96%87%E4%BB%B6">1. 启用安装文件</a></li>
 <li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E9%85%8D%E7%BD%AE%E4%BD%A0%E7%9A%84%20ROS2%20%E7%8E%AF%E5%A2%83.html#2-%E5%B0%86%E5%90%AF%E5%8A%A8%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E6%B7%BB%E5%8A%A0%E5%88%B0-shell-%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC%E4%B8%AD">2. 将启动环境安装过程添加到 shell 启动脚本中</a></li>
@@ -438,7 +594,7 @@ pip3 install packaging
 <p>ROS2 依赖于使用 shell 环境组合工作空间的概念。<code>Workspace（工作区）</code> 是 ROS 术语，指的是您正在使用 ROS2 开发的系统上的位置。核心 ROS2 workspace 被称为 <code>underlay</code>。后续的本地 workspace 称为 <code>overlays</code>。当使用 ROS2 进行开发时，通常会有几个 workspace 并发操作运行。</p>
 <p>组合使用 workspace 使得针对 ROS2 的不同版本或针对不同的包集合开发更加容易。它还允许在同一台计算机上安装若干个 ROS2 发行版，并在它们之间进行切换。</p>
 <p>这可以通过在每次打开新 shell 时启动安装文件，或者向 shell 启动脚本中添加一次 source 命令来实现。如果没有启用安装文件（设置 ROS2 环境），您将无法访问 ROS2 的命令，或者查找或使用 ROS2 包。换句话说，你也就不能使用 ROS2。</p>
-<h2 id="前提"><a class="header" href="#前提">前提</a></h2>
+<h2 id="前提条件"><a class="header" href="#前提条件">前提条件</a></h2>
 <h3 id="1-启用安装文件"><a class="header" href="#1-启用安装文件">1. 启用安装文件</a></h3>
 <p>你需要在打开的每个新 shell 上运行这个命令来访问 ROS2 命令，如下所示:</p>
 <pre><code class="language-shell">call C:\dev\ros2\local_setup.bat
@@ -505,10 +661,10 @@ ROS_DISTRO=humble
 <p>ROS2 开发环境在使用之前需要正确配置。这可以通过两种方式来实现: 要么在打开的每个新 shell 中启用 ROS2 的安装文件，要么在启动脚本中添加启用 ROS2 安装文件的命令。</p>
 <p>如果您在使用 ROS2 查找或使用包时遇到任何问题，您应该做的第一件事是检查您的环境变量，并确保它们被设置为您想要的版本和发行版本。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="介绍-turtlesim-和-rqt"><a class="header" href="#介绍-turtlesim-和-rqt">介绍 turtlesim 和 rqt</a></h1>
-<h2 id="目录-2"><a class="header" href="#目录-2">目录</a></h2>
+<h2 id="目录-3"><a class="header" href="#目录-3">目录</a></h2>
 <ul>
 <li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BB%8B%E7%BB%8D%20turtlesim%20%E5%92%8C%20rqt/intro.html#%E8%83%8C%E6%99%AF">背景</a></li>
-<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BB%8B%E7%BB%8D%20turtlesim%20%E5%92%8C%20rqt/intro.html#%E5%89%8D%E6%8F%90">前提</a>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BB%8B%E7%BB%8D%20turtlesim%20%E5%92%8C%20rqt/intro.html#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a>
 <ul>
 <li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BB%8B%E7%BB%8D%20turtlesim%20%E5%92%8C%20rqt/intro.html#1-%E5%AE%89%E8%A3%85-turtlesim">1. 安装 turtlesim</a></li>
 <li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BB%8B%E7%BB%8D%20turtlesim%20%E5%92%8C%20rqt/intro.html#2-%E5%90%AF%E5%8A%A8-turtlesim">2. 启动 turtlesim</a></li>
@@ -530,7 +686,7 @@ ROS_DISTRO=humble
 <p><code>Turtlesim</code> 是一个学习 ROS2 的轻量级模拟器。它说明了 ROS2 在最基本的层面上做了什么，以便让你知道稍后你将用真实的机器人或机器人模拟做什么。</p>
 <p><code>rqt</code> 是 ROS2 的 GUI 工具。在 rqt 中完成的所有操作都可以在命令行上完成，但是它提供了一种更简单、更用户友好的方法来操作 ROS2 元素。</p>
 <p>本教程涉及 ROS2 的核心概念，如分离的 nodes、topics 和 services。所有这些概念都将在以后的教程中详细介绍; 现在，您将简单地设置工具并对它们有所了解。</p>
-<h2 id="前提-1"><a class="header" href="#前提-1">前提</a></h2>
+<h2 id="前提条件-1"><a class="header" href="#前提条件-1">前提条件</a></h2>
 <h3 id="1-安装-turtlesim"><a class="header" href="#1-安装-turtlesim">1. 安装 turtlesim</a></h3>
 <p>只要你安装 ROS2 的归档文件包含 <code>ros_tutorials</code> 存储库，你就应该已经安装了 <code>turtlesim</code>。</p>
 <p>检查 <code>turtlesim</code> 软件包是否已安装:</p>
@@ -656,7 +812,7 @@ ros2 action list
 <h2 id="小结-1"><a class="header" href="#小结-1">小结</a></h2>
 <p>使用 <code>turtlesim</code> 和 <code>rqt</code> 是学习 ROS2 核心概念的好方法。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="理解-ros2-nodes"><a class="header" href="#理解-ros2-nodes">理解 ROS2 nodes</a></h1>
-<h2 id="目录-3"><a class="header" href="#目录-3">目录</a></h2>
+<h2 id="目录-4"><a class="header" href="#目录-4">目录</a></h2>
 <ul>
 <li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20nodes/intro.html#%E8%83%8C%E6%99%AF">背景</a>
 <ul>
@@ -664,7 +820,7 @@ ros2 action list
 <li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20nodes/intro.html#2-ros2-%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9nodes">2. ROS2 中的节点（nodes）</a></li>
 </ul>
 </li>
-<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20nodes/intro.html#%E5%89%8D%E6%8F%90">前提</a>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20nodes/intro.html#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a>
 <ul>
 <li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20nodes/intro.html#1-ros2-run">1. ros2 run</a></li>
 <li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20nodes/intro.html#2-ros2-node-list">2. ros2 node list</a>
@@ -681,10 +837,10 @@ ros2 action list
 <h3 id="1-ros2-图"><a class="header" href="#1-ros2-图">1. ROS2 图</a></h3>
 <p>ROS2 图是一个同时处理数据的 ROS2 元素的网络。如果要将所有可执行文件映射出来并对其进行可视化，那么它包含了所有可执行文件以及它们之间的连接。</p>
 <h3 id="2-ros2-中的节点nodes"><a class="header" href="#2-ros2-中的节点nodes">2. ROS2 中的节点（nodes）</a></h3>
-<p>ROS 中的每个 node 应该负责一个单一的模块用途（例如，一个节点用于控制车轮马达，一个节点用于控制激光测距仪等）。每个 node 可以通过 topics、services、actions 或 parameters 向其他 node 发送和接收数据。</p>
+<p>ROS 中的每个 node 应该负责一个单一的模块用途（例如，一个 node 用于控制车轮马达，一个 node 用于控制激光测距仪等）。每个 node 可以通过 topics、services、actions 或 parameters 向其他 node 发送和接收数据。</p>
 <p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20nodes/Nodes-TopicandService.gif" alt="nodes" /></p>
 <p>一个完整的机器人系统由许多协同工作的 nodes 组成。在 ROS2 中，单个可执行程序（C++ 程序、Python 程序等）可以包含一个或多个 nodes。</p>
-<h2 id="前提-2"><a class="header" href="#前提-2">前提</a></h2>
+<h2 id="前提条件-2"><a class="header" href="#前提条件-2">前提条件</a></h2>
 <h3 id="1-ros2-run"><a class="header" href="#1-ros2-run">1. ros2 run</a></h3>
 <p>命令 <code>ros2 run</code> 会启动某个 ROS2 package 中的可执行文件：</p>
 <pre><code class="language-shell">ros2 run &lt;package_name&gt; &lt;executable_name&gt;
@@ -700,10 +856,10 @@ ros2 action list
 <p>当 <code>turtlesim</code> 仍然在它所在终端中运行时打开一个新的终端，输入以下命令:</p>
 <pre><code class="language-shell">ros2 node list
 </code></pre>
-<p>终端将返回节点名:</p>
+<p>终端将返回 node 名:</p>
 <pre><code class="language-shell">/turtlesim
 </code></pre>
-<p>打开另一个新的终端，用以下命令启动远程操作节点:</p>
+<p>打开另一个新的终端，用以下命令启动远程操作 node:</p>
 <pre><code class="language-shell">ros2 run turtlesim turtle_teleop_key
 </code></pre>
 <p>在这里，我们再次搜索 <code>turtlesim</code> 包，这次是为了找名为 <code>turtle_teleop_key</code> 的可执行文件。</p>
@@ -764,6 +920,798 @@ ros2 action list
 <p>在机器人系统中，node 是为单一的模块化目的服务的基础的 ROS2 元素。</p>
 <p>在本教程中，您通过运行可执行程序 <code>turtlesim_node</code> 和 <code>turtle_teleop_key</code> 来利用 <code>turtlesim</code> 包创建的 nodes。</p>
 <p>您学习了如何使用 <code>ros2 node list</code> 发现活动 node 的名称，以及使用 <code>ros2 node info</code> 对单个 node 进行信息查询。这些工具对于理解复杂的真实世界机器人系统中的数据流至关重要。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="理解-ros2-topics"><a class="header" href="#理解-ros2-topics">理解 ROS2 topics</a></h1>
+<h2 id="目录-5"><a class="header" href="#目录-5">目录</a></h2>
+<ul>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/intro.html#%E8%83%8C%E6%99%AF">背景</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/intro.html#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a>
+<ul>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/intro.html#1-%E8%AE%BE%E7%BD%AE">1. 设置</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/intro.html#2-rqt_graph">2. rqt_graph</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/intro.html#3-ros2-topic-list">3. ros2 topic list</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/intro.html#4-ros2-topic-echo">4. ros2 topic echo</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/intro.html#5-ros2-topic-info">5. ros2 topic info</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/intro.html#6-ros2-interface-show">6. ros2 interface show</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/intro.html#7-ros2-topic-pub">7. ros2 topic pub</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/intro.html#8-ros2-topic-hz">8. ros2 topic hz</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/intro.html#9-%E6%B8%85%E7%90%86">9. 清理</a></li>
+</ul>
+</li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/intro.html#%E5%B0%8F%E7%BB%93">小结</a></li>
+</ul>
+<h2 id="背景-3"><a class="header" href="#背景-3">背景</a></h2>
+<p>ROS2 将复杂的系统分解成许多模块化的 nodes。topics 是 ROS 图中的一个重要元素，它充当 nodes 交换消息的总线（bus）。</p>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/Topic-SinglePublisherandSingleSubscriber.gif" alt="topic-oneway" /></p>
+<p>一个 node 可以向任意数量的 topics 发布数据，同时还可以订阅任意数量的 topics。</p>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/Topic-MultiplePublisherandMultipleSubscriber.gif" alt="multi-topics" /></p>
+<p>topics 是数据在 nodes 之间以及在系统的不同部分之间移动的主要方式之一。</p>
+<h2 id="前提条件-3"><a class="header" href="#前提条件-3">前提条件</a></h2>
+<h3 id="1-设置"><a class="header" href="#1-设置">1. 设置</a></h3>
+<p>到目前为止，你应该已经习惯了启动 <code>turtlesim</code> 了。</p>
+<p>打开一个新的终端并运行:</p>
+<pre><code class="language-shell">ros2 run turtlesim turtlesim_node
+</code></pre>
+<p>打开另一个终端并运行:</p>
+<pre><code class="language-shell">ros2 run turtlesim turtle_teleop_key
+</code></pre>
+<p>回想一下在前一个教程中，这些 node 的名称默认为 <code>/turtlesim</code> 和 <code>/teleop_turtle</code>。</p>
+<h3 id="2-rqt_graph"><a class="header" href="#2-rqt_graph">2. rqt_graph</a></h3>
+<p>在本教程中，我们将使用 <code>rqt_graph</code> 可视化变化的 nodes 和 topics，以及它们之间的连接。</p>
+<p><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/../%E4%BB%8B%E7%BB%8D%20turtlesim%20%E5%92%8C%20rqt/intro.html">Turtlesim 教程</a> 告诉您如何安装 <code>rqt</code> 及其所有插件，包括 <code>rqt_graph</code>。</p>
+<p>要运行 <code>rqt_graph</code>，打开一个新的终端并输入以下命令:</p>
+<pre><code class="language-shell">rqt_graph
+</code></pre>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/rqt_graph.png" alt="rqt_graph" /></p>
+<p>你也可以通过打开 <code>rqt</code> 并选择 <strong>Plugins &gt; Introspection &gt; Node Graph</strong> 来打开 <code>rqt_graph</code>。</p>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/rqt_rqt_graph.png" alt="rqt_rqt_graph" /></p>
+<p>您应该看到上面的 nodes 和 topics，以及图的外围的两个 actions（现在我们暂时忽略这些）。如果你将鼠标悬停在中间的 topic 上，你会看到类似上面图片的颜色高亮。</p>
+<p>该图描绘了 <code>/turtlesim</code> node 和 <code>/teleop_turtle</code> node 如何在一个 topic 上相互通信。<code>/teleop_turtle</code> node 将数据（您输入的用于移动乌龟的按键）发布到 <code>/turtle1/cmd_vel</code> topic 上，而<code> /turtlesim</code> node 订阅了该 topic 以接收数据。</p>
+<p><code>rqt_graph</code> 的突出显示功能在检查具有多个 nodes 和 topics 以多种不同方式连接的更复杂的系统时非常有用。</p>
+<p>因此我们看到，<code>rqt_graph</code> 其实是一个图形化的自省工具。现在我们来看一些用于查看 topic 的命令行工具。</p>
+<h3 id="3-ros2-topic-list"><a class="header" href="#3-ros2-topic-list">3. ros2 topic list</a></h3>
+<p>在新的终端中运行 <code>ros2 topic list</code> 命令将返回系统中当前活动的所有 topics 列表:</p>
+<pre><code class="language-shell">&gt; ros2 topic list
+/parameter_events
+/rosout
+/turtle1/cmd_vel
+/turtle1/color_sensor
+/turtle1/pose
+</code></pre>
+<p><code>ros2 topic list -t</code> 将返回相同的 topics 列表，这一次在括号中添加了 topic 类型:</p>
+<pre><code class="language-shell">&gt; ros2 topic list -t
+/parameter_events [rcl_interfaces/msg/ParameterEvent]
+/rosout [rcl_interfaces/msg/Log]
+/turtle1/cmd_vel [geometry_msgs/msg/Twist]
+/turtle1/color_sensor [turtlesim/msg/Color]
+/turtle1/pose [turtlesim/msg/Pose]
+</code></pre>
+<p>这些属性，特别是 topic 的类型，是 nodes 在不同 topics 之间切换时如何确定它们在谈论相同类型的信息。</p>
+<p>如果你想知道所有这些 topics 在 <code>rqt_graph</code> 中的位置，你可以取消选中 <strong>Hide</strong> 下面的所有 Check 框:</p>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/hide_unchecked.png" alt="hide_unchecked" /></p>
+<p>不过，现在，为了避免混淆，还是让这些选项处于 checked 状态吧。</p>
+<h3 id="4-ros2-topic-echo"><a class="header" href="#4-ros2-topic-echo">4. ros2 topic echo</a></h3>
+<p>要查看某个 topic 上发布的数据，请使用:</p>
+<pre><code class="language-shell">ros2 topic echo &lt;topic_name&gt;
+</code></pre>
+<p>既然我们知道 <code>/teleop_turtle</code> node 在 <code>/turtle1/cmd_vel</code> topic 上向 <code>/turtlesim</code> node 上发布数据，那么让我们使用 <code>ros2 topic echo</code> 命令对这个 topic 进行内省:</p>
+<pre><code class="language-shell">ros2 topic echo /turtle1/cmd_vel
+</code></pre>
+<p>起初，这个命令不会返回任何数据，因为它在等待 <code>/teleop_turtle</code> 发布某些内容。</p>
+<p>返回到 <code>turtle_teleop_key</code> 正在运行的终端，并使用方向按键移动乌龟。观察你的 <code>ros2 topic echo</code> 运行的终端，你会看到你每一个动作的位置数据被发布:</p>
+<pre><code class="language-shell">&gt; ros2 topic echo /turtle1/cmd_vel
+linear:
+  x: 2.0
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+---
+linear:
+  x: 2.0
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+---
+linear:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: -2.0
+---
+</code></pre>
+<p>现在返回 <code>rqt_graph</code> 并取消选中 <strong>Debug</strong> 框。</p>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/debug_unchecked.png" alt="debug_unchecked" /></p>
+<p><code>/_ros2cli_4616</code> 是由我们刚才运行的 <code>ros2 topic echo</code> 命令创建的 node（数字可能不同）。现在您可以看到发布者正在通过 <code>cmd_vel</code> topic 发布数据，并且订阅了两个订阅者（一个是 <code>/turtlesim</code>，另一个是 <code>/_ros2cli_4616</code>）。</p>
+<h3 id="5-ros2-topic-info"><a class="header" href="#5-ros2-topic-info">5. ros2 topic info</a></h3>
+<p>topic 不必只是点对点的交流; 它可以是一对多、多对一或多对多。</p>
+<p>另一种看待这个问题的方式是打开一个新终端并运行:</p>
+<pre><code class="language-shell">&gt; ros2 topic info /turtle1/cmd_vel
+Type: geometry_msgs/msg/Twist
+Publisher count: 1
+Subscription count: 2
+</code></pre>
+<h3 id="6-ros2-interface-show"><a class="header" href="#6-ros2-interface-show">6. ros2 interface show</a></h3>
+<p>nodes 使用消息通过 topics 发送数据。发布者和订阅者必须发送和接收相同类型的消息以进行通信。</p>
+<p>在运行 <code>ros2 topic list -t</code> 后，我们前面看到的 topic 类型让我们知道每个 topic 使用的消息类型。回想一下 <code>cmd_vel</code> topic 的类型:</p>
+<pre><code class="language-shell">geometry_msgs/msg/Twist
+</code></pre>
+<p>这意味着在名为 <code>geometry_msgs</code> 的 ROS2 包中有一个名为 <code>Twist</code> 的 <code>msg</code>。</p>
+<p>现在我们可以在这个类型上运行 <code>ros2 interface show &lt;msg type&gt;</code> 来了解它的详细信息，特别是消息需要什么样的数据结构。</p>
+<pre><code class="language-shell">&gt; ros2 interface show geometry_msgs/msg/Twist
+# This expresses velocity in free space broken into its linear and angular parts.
+
+Vector3  linear
+        float64 x
+        float64 y
+        float64 z
+Vector3  angular
+        float64 x
+        float64 y
+        float64 z
+</code></pre>
+<p>这告诉您 <code>/turtlesim</code> node 期待一个包含两个向量（<code>linear</code> 和 <code>angular</code>）的消息，每个向量包含三个元素。如果你还记得我们看到 <code>/teleop_turtle</code> 用 <code>ros2 topic echo</code> 命令传递给 <code>/turtlesim</code> 的数据，它们的结构是一样的:</p>
+<pre><code class="language-shell">linear:
+  x: 2.0
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+  ---
+</code></pre>
+<h3 id="7-ros2-topic-pub"><a class="header" href="#7-ros2-topic-pub">7. ros2 topic pub</a></h3>
+<p>现在您已经有了消息结构，您可以使用以下命令直接从命令行向 topic 发布数据:</p>
+<pre><code class="language-shell">ros2 topic pub &lt;topic_name&gt; &lt;msg_type&gt; '&lt;args&gt;'
+</code></pre>
+<p><code>'&lt;args&gt;'</code> 参数是您将传递给 topic 的实际数据，在上一节中您刚刚发现的结构中。</p>
+<p>需要注意的是，这个参数需要在 YAML 语法中输入:</p>
+<pre><code class="language-shell">ros2 topic pub --once /turtle1/cmd_vel geometry_msgs/msg/Twist &quot;{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 1.8}}&quot;
+</code></pre>
+<p><code>--once</code> 是一个可选参数，意思是“发布一条消息然后退出”。</p>
+<p>你会在终端机收到以下讯息:</p>
+<pre><code class="language-shell">&gt; ros2 topic pub --once /turtle1/cmd_vel geometry_msgs/msg/Twist &quot;{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 1.8}}&quot;
+publisher: beginning loop
+publishing #1: geometry_msgs.msg.Twist(linear=geometry_msgs.msg.Vector3(x=2.0, y=0.0, z=0.0), angular=geometry_msgs.msg.Vector3(x=0.0, y=0.0, z=1.8))
+</code></pre>
+<p>你会看到你的乌龟像这样移动:</p>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/pub_once.png" alt="pub_once" /></p>
+<p>海龟（通常是它想要模仿的真正的机器人）需要一系列稳定的命令来持续运行。所以，为了让乌龟继续移动，你可以运行命令:</p>
+<pre><code class="language-shell">ros2 topic pub --rate 1 /turtle1/cmd_vel geometry_msgs/msg/Twist &quot;{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 1.8}}&quot;
+</code></pre>
+<p>不同之处在于删除了 <code>--once</code> 选项和增加了 <code>--rate 1</code> 选项，后者告诉 <code>ros2 topic pub</code> 以 1 Hz 的频率持续地地发布消息。</p>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/pub_stream.png" alt="pub_stream" /></p>
+<p>您可以刷新 <code>rqt_graph</code> 以图形化的形式查看发生了什么。您将看到 <code>ros 2 topic pub ...</code> 执行后，node（<code>/_ros2cli_10400</code>）正在 <code>/turtle1/cmd_vel</code> topic 上发布消息，并且正在被 <code>ros2 topic echo ...</code> 的 node（<code>/_ros2cli_396</code>）和 <code>/turtlesim</code> node 接收。</p>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/pub_stream_graph.png" alt="pub_stream_graph" /></p>
+<p>最后，您可以在 <code>/turtle1/pose</code> topic 上运行 <code>ros2 topic echo</code> 命令并重新检查 <code>rqt_graph</code>:</p>
+<pre><code class="language-shell">ros2 topic echo /turtle1/pose
+</code></pre>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20topics/pose.png" alt="pose" /></p>
+<p>您可以看到 <code>/turtlesim</code> node 也将消息发布到 <code>/turtle1/pose</code> topic，新的 <code>echo</code> 命令 node 将订阅该 topic。</p>
+<h3 id="8-ros2-topic-hz"><a class="header" href="#8-ros2-topic-hz">8. ros2 topic hz</a></h3>
+<p>对于这个过程的最后一次自省，您可以使用以下命令查看数据发布的速率:</p>
+<pre><code class="language-shell">&gt; ros2 topic hz /turtle1/pose
+average rate: 59.354
+  min: 0.005s max: 0.027s std dev: 0.00284s window: 58
+</code></pre>
+<p>它将返回关于 <code>/turtlesim</code> node 向 <code>/turtle1/pose</code> topic 发布数据的速率。</p>
+<p>回想一下，你设置了 <code>turtle1/cmd_vel</code> 的发布频率为 1 Hz，因为使用的是 <code>ros2 topic pub --rate 1 ...</code> 命令。如果你用 <code>turtle1/cmd_vel</code> 而不是 <code>turtle1/pose</code> 运行上面的命令，你会看到一个反映该速率的平均值。</p>
+<h3 id="9-清理"><a class="header" href="#9-清理">9. 清理</a></h3>
+<p>此时，您将有许多 nodes 在运行。不要忘记在每个终端输入 Ctrl + C 来关闭它们。</p>
+<h2 id="小结-3"><a class="header" href="#小结-3">小结</a></h2>
+<p>nodes 在 topics 上发布消息，从而允许任意数量的其他 nodes 订阅和访问该消息。在本教程中，您使用 <code>rqt_graph</code> 和命令行工具研究了 topic 上几个 nodes 之间的连接。您现在应该对数据如何在 ROS2 系统中流动有了一个很好的了解。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="理解-ros2-services"><a class="header" href="#理解-ros2-services">理解 ROS2 services</a></h1>
+<h2 id="目录-6"><a class="header" href="#目录-6">目录</a></h2>
+<ul>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20services/intro.html#%E8%83%8C%E6%99%AF">背景</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20services/intro.html#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a>
+<ul>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20services/intro.html#1-%E8%AE%BE%E7%BD%AE">1. 设置</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20services/intro.html#2-ros2-service-list">2. ros2 service list</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20services/intro.html#3-ros2-service-type">3. ros2 service type</a>
+<ul>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20services/intro.html#31-ros2-service-list--t">3.1. ros2 service list -t</a></li>
+</ul>
+</li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20services/intro.html#4-ros2-service-find">4. ros2 service find</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20services/intro.html#5-ros2-interface-show">5. ros2 interface show</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20services/intro.html#6-ros2-service-call">6. ros2 service call</a></li>
+</ul>
+</li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20services/intro.html#%E5%B0%8F%E7%BB%93">小结</a></li>
+</ul>
+<h2 id="背景-4"><a class="header" href="#背景-4">背景</a></h2>
+<p>Service 是 ROS 图中 nodes 的另一种通信方法。Service 基于呼叫和响应模型（call-and-response model），而不是 topics 的发布者-订阅者模型（publisher-subscriber model）。虽然 topics 允许 nodes 订阅数据流并获得持续更新，但 services 只在 client 特别调用它们时才提供数据。</p>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20services/Service-SingleServiceClient.gif" alt="single-client" /></p>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20services/Service-MultipleServiceClient.gif" alt="multi-clients" /></p>
+<h2 id="前提条件-4"><a class="header" href="#前提条件-4">前提条件</a></h2>
+<h3 id="1-设置-1"><a class="header" href="#1-设置-1">1. 设置</a></h3>
+<p>启动两个 <code>turtlesim</code> nodes —— <code>/turtlesim</code> 和 <code>/teleop_turtle</code>。</p>
+<p>打开一个终端并输入：</p>
+<pre><code class="language-shell">ros2 run turtlesim turtlesim_node
+</code></pre>
+<p>再打开另一个终端并输入：</p>
+<pre><code class="language-shell">ros2 run turtlesim turtle_teleop_key
+</code></pre>
+<h3 id="2-ros2-service-list"><a class="header" href="#2-ros2-service-list">2. ros2 service list</a></h3>
+<p>在新的终端中运行 <code>ros2 service list</code> 命令将返回系统中当前活动的所有 services 的列表:</p>
+<pre><code class="language-shell">&gt; ros2 service list
+/clear
+/kill
+/reset
+/spawn
+/teleop_turtle/describe_parameters
+/teleop_turtle/get_parameter_types
+/teleop_turtle/get_parameters
+/teleop_turtle/list_parameters
+/teleop_turtle/set_parameters
+/teleop_turtle/set_parameters_atomically
+/turtle1/set_pen
+/turtle1/teleport_absolute
+/turtle1/teleport_relative
+/turtlesim/describe_parameters
+/turtlesim/get_parameter_types
+/turtlesim/get_parameters
+/turtlesim/list_parameters
+/turtlesim/set_parameters
+/turtlesim/set_parameters_atomically
+</code></pre>
+<p>您将看到这两个 nodes（<code>/turtlesim</code> 和 <code>/teleop_turtle</code>）都有相同的六个 services，它们的名称中都有 parameters。几乎 ROS2 中的每个 nodes 都有这些基础设施 services（也就是说，这 6 个 services 是 nodes 父类中定义的 6 个方法？猜测），而这些 services 的 parameters 是建立在这些 services 之上的。在下一个教程中将会有更多关于 parameters 的内容。在本教程中，parameter services 将从讨论中省略。</p>
+<p>到目前为止，让我们将目光集中再 turtlesim 定义的 services 上 —— <code>/clear</code>、<code>/kill</code>、<code>/reset</code>、<code>/spawn</code>、<code>/turtle1/set_pen</code>、<code>/turtle1/teleport_absolute</code> 和 <code>/turtle1/teleport_relative</code>。您可能还记得在 <a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20services/../%E4%BB%8B%E7%BB%8D%20turtlesim%20%E5%92%8C%20rqt/intro.html">介绍 turtlesim 和 rqt</a> 教程中使用 <code>rqt</code> 与其中一些服务进行的交互的细节。</p>
+<h3 id="3-ros2-service-type"><a class="header" href="#3-ros2-service-type">3. ros2 service type</a></h3>
+<p>Services 的类型信息描述如何构造 services 的请求和响应数据的类型。Services 类型的定义类似于topics 的类型，但 services 类型有两个部分: 一个用于描述请求的消息，另一个用于描述响应的消息。</p>
+<p>想要查到 services 的类型信息，请使用命令：</p>
+<pre><code class="language-shell">ros2 service type &lt;service_name&gt;
+</code></pre>
+<p>让我们以 <code>turtlesim</code> 的 <code>/clear</code> service 为例，打开新的终端，输入下面命令：</p>
+<pre><code class="language-shell">&gt; ros2 service type /clear
+std_srvs/srv/Empty
+</code></pre>
+<p><code>std_srvs/srv/Empty</code> 类型意味着 service 调用在发出请求时不发送数据，在接收响应时不接收数据。</p>
+<h4 id="31-ros2-service-list--t"><a class="header" href="#31-ros2-service-list--t">3.1. ros2 service list -t</a></h4>
+<p>同时查看所有活动 services 的类型，可以使用选项 <code>--show-types</code>，它的简化形式是 <code>-t</code>，追加在 <code>ros2 service list</code> 命令后面：</p>
+<pre><code class="language-shell">&gt; ros2 service list -t
+/clear [std_srvs/srv/Empty]
+/kill [turtlesim/srv/Kill]
+/reset [std_srvs/srv/Empty]
+/spawn [turtlesim/srv/Spawn]
+/teleop_turtle/describe_parameters [rcl_interfaces/srv/DescribeParameters]
+/teleop_turtle/get_parameter_types [rcl_interfaces/srv/GetParameterTypes]
+/teleop_turtle/get_parameters [rcl_interfaces/srv/GetParameters]
+/teleop_turtle/list_parameters [rcl_interfaces/srv/ListParameters]
+/teleop_turtle/set_parameters [rcl_interfaces/srv/SetParameters]
+/teleop_turtle/set_parameters_atomically [rcl_interfaces/srv/SetParametersAtomically]
+/turtle1/set_pen [turtlesim/srv/SetPen]
+/turtle1/teleport_absolute [turtlesim/srv/TeleportAbsolute]
+/turtle1/teleport_relative [turtlesim/srv/TeleportRelative]
+/turtlesim/describe_parameters [rcl_interfaces/srv/DescribeParameters]
+/turtlesim/get_parameter_types [rcl_interfaces/srv/GetParameterTypes]
+/turtlesim/get_parameters [rcl_interfaces/srv/GetParameters]
+/turtlesim/list_parameters [rcl_interfaces/srv/ListParameters]
+/turtlesim/set_parameters [rcl_interfaces/srv/SetParameters]
+/turtlesim/set_parameters_atomically [rcl_interfaces/srv/SetParametersAtomically]
+</code></pre>
+<h3 id="4-ros2-service-find"><a class="header" href="#4-ros2-service-find">4. ros2 service find</a></h3>
+<p>如果你想要找到指定类型的所有 services，你可以使用下面命令：</p>
+<pre><code class="language-shell">ros2 service find &lt;type_name&gt;
+</code></pre>
+<p>例如，找到所有 <code>std_srvs/srv/Empty</code> 类型的 services 列表：</p>
+<pre><code class="language-shell">&gt; ros2 service find std_srvs/srv/Empty
+/clear
+/reset
+</code></pre>
+<h3 id="5-ros2-interface-show"><a class="header" href="#5-ros2-interface-show">5. ros2 interface show</a></h3>
+<p>你可以在命令行中调用某个 service，但首先你需要知道某个 service 的请求参数的格式：</p>
+<pre><code class="language-shell">ros2 interface show &lt;type_name&gt;
+</code></pre>
+<p>例如，我们想要知道 <code>/clear</code> service 的类型 <code>std_srvs/srv/Empty</code> 的请求数据的格式：</p>
+<pre><code class="language-shell">&gt; ros2 interface show std_srvs/srv/Empty
+---
+</code></pre>
+<p><code>---</code> 用于分割 service 的请求数据结构（<code>---</code> 之上）和响应数据结构（<code>---</code> 之下）。但是就如你早些时候了解到的，<code>std_srvs/srv/Empty</code> 类型表示不发送任何数据也不接收任何数据。所以自然地，它们的数据结构都是空的。</p>
+<p>在让我们查看以下像 <code>/spawn</code> service 那样的类型，需要发送和接收什么样的数据结构。从命令 <code>ros2 service list -t</code> 中我们了解到 <code>/spawn</code> service 的类型是 <code>turtlesim/srv/Spawn</code>。</p>
+<p>执行命令：</p>
+<pre><code class="language-shell">&gt; ros2 interface show turtlesim/srv/Spawn
+float32 x
+float32 y
+float32 theta
+string name # Optional.  A unique name will be created and returned if this is empty
+---
+string name
+</code></pre>
+<p><code>---</code> 之上的信息告诉我们如果想要调用 <code>/spawn</code> service 需要传入 <code>x</code>、<code>y</code> 和 <code>theta</code> 三个参数确定海龟出现的位置，还有一个 <code>name</code> 参数是可选的，可以不传。</p>
+<p>在这种情况下，<code>---</code> 之下的信息不是您需要知道的，但是它可以帮助您理解从调用得到的响应的数据类型。</p>
+<h3 id="6-ros2-service-call"><a class="header" href="#6-ros2-service-call">6. ros2 service call</a></h3>
+<p>现在您已经知道了什么是 service 的类型，如何查找 services 的类型，以及如何查找该类型的参数的结构，您可以使用以下命令调用 service:</p>
+<pre><code class="language-shell">ros2 service call &lt;service_name&gt; &lt;service_type&gt; &lt;arguments&gt;
+</code></pre>
+<p>参数 <code>&lt;arguments&gt;</code> 部分是可选的。例如，大家已经知道 <code>std_srvs/srv/Empty</code> 类型的 service 不需要任何参数：</p>
+<pre><code class="language-shell">ros2 service call /clear std_srvs/srv/Empty
+</code></pre>
+<p>这个命令可以清除龟龟画的任何线：</p>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20services/clear.png" alt="clear" /></p>
+<p>现在让我们通过调用 <code>/spawn</code> 和输入参数来产生一个新的海龟。命令行服务调用中的输入 <code>&lt;arguments&gt;</code> 需要使用 YAML 语法。</p>
+<p>输入下面命令：</p>
+<pre><code class="language-shell">&gt; ros2 service call /spawn turtlesim/srv/Spawn &quot;{x: 2, y: 2, theta: 0.2, name: ''}&quot;
+requester: making request: turtlesim.srv.Spawn_Request(x=2.0, y=2.0, theta=0.2, name='')
+
+response:
+turtlesim.srv.Spawn_Response(name='turtle2')
+</code></pre>
+<p>这时 <code>turtlesim</code> 窗口会更新并产生新的海龟：</p>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20services/spawn.png" alt="spawn" /></p>
+<h2 id="小结-4"><a class="header" href="#小结-4">小结</a></h2>
+<p>Nodes 可以使用 ROS2 中的 services 进行通信。Service 是一种请求/响应模式，Client 向提供 services 的 node 发出请求，service 处理请求并生成响应。</p>
+<p>您通常不希望使用 service 进行连续调用; Topics 或者 actions 更适合。</p>
+<p>在本教程中，您使用命令行工具来识别、详细说明和调用 services。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="理解-ros2-parameters"><a class="header" href="#理解-ros2-parameters">理解 ROS2 parameters</a></h1>
+<h2 id="目录-7"><a class="header" href="#目录-7">目录</a></h2>
+<ul>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20parameters/intro.html#%E8%83%8C%E6%99%AF">背景</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20parameters/intro.html#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a>
+<ul>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20parameters/intro.html#1-%E8%AE%BE%E7%BD%AE">1. 设置</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20parameters/intro.html#2-ros2-param-list">2. ros2 param list</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20parameters/intro.html#3-ros2-param-get">3. ros2 param get</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20parameters/intro.html#4-ros2-param-set">4. ros2 param set</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20parameters/intro.html#5-ros2-param-dump">5. ros2 param dump</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20parameters/intro.html#6-ros2-param-load">6. ros2 param load</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20parameters/intro.html#7-%E5%9C%A8-node-%E5%90%AF%E5%8A%A8%E6%97%B6%E5%8A%A0%E8%BD%BD%E5%8F%82%E6%95%B0%E6%96%87%E4%BB%B6">7. 在 node 启动时加载参数文件</a></li>
+</ul>
+</li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20parameters/intro.html#%E5%B0%8F%E7%BB%93">小结</a></li>
+</ul>
+<h2 id="背景-5"><a class="header" href="#背景-5">背景</a></h2>
+<p>参数（parameters）是 nodes 的配置信息。您可以将参数视为 nodes 设置（settings）。Node 可以将参数存储为整数、浮点数、布尔值、字符串和列表（lists）。在 ROS2 中，每个 node 维护自己的参数。有关参数的更多背景信息，请参阅 <a href="http://docs.ros.org/en/humble/Concepts/About-ROS-2-Parameters.html">概念文档</a> 。</p>
+<h2 id="前提条件-5"><a class="header" href="#前提条件-5">前提条件</a></h2>
+<h3 id="1-设置-2"><a class="header" href="#1-设置-2">1. 设置</a></h3>
+<p>启动两个 <code>turtlesim</code> nodes —— <code>/turtlesim</code> 和 <code>/teleop_turtle</code>。</p>
+<p>打开一个终端并输入：</p>
+<pre><code class="language-shell">ros2 run turtlesim turtlesim_node
+</code></pre>
+<p>再打开另一个终端并输入：</p>
+<pre><code class="language-shell">ros2 run turtlesim turtle_teleop_key
+</code></pre>
+<h3 id="2-ros2-param-list"><a class="header" href="#2-ros2-param-list">2. ros2 param list</a></h3>
+<p>要查看属于 nodes 的参数，打开一个新的终端并输入以下命令:</p>
+<pre><code class="language-shell">&gt; ros2 param list
+/teleop_turtle:
+  qos_overrides./parameter_events.publisher.depth
+  qos_overrides./parameter_events.publisher.durability
+  qos_overrides./parameter_events.publisher.history
+  qos_overrides./parameter_events.publisher.reliability
+  scale_angular
+  scale_linear
+  use_sim_time
+/turtlesim:
+  background_b
+  background_g
+  background_r
+  qos_overrides./parameter_events.publisher.depth
+  qos_overrides./parameter_events.publisher.durability
+  qos_overrides./parameter_events.publisher.history
+  qos_overrides./parameter_events.publisher.reliability
+  use_sim_time
+</code></pre>
+<p>您将看到 nodes 名称空间，<code>/teleop_turtle</code> 和 <code>/turtlesim</code>，后面跟着每个 node 的参数。</p>
+<p>每个 node 都有参数 <code>use_sim_time</code>；在 <code>turtlesim</code> 中不是唯一的。</p>
+<p>基于他们的名字，它看起来像 <code>/turtlesim</code> 的参数决定背景颜色的 turtlesim 窗口使用 RGB 颜色值。</p>
+<p>要确定参数的类型，可以使用 <code>ros2 param get</code> 命令。</p>
+<h3 id="3-ros2-param-get"><a class="header" href="#3-ros2-param-get">3. ros2 param get</a></h3>
+<p>若要显示参数的类型和当前值，请使用以下命令:</p>
+<pre><code class="language-shell">ros2 param get &lt;node_name&gt; &lt;parameter_name&gt;
+</code></pre>
+<p>让我们找出 <code>/turtlesim</code> node 的参数 <code>background_g</code> 的当前值:</p>
+<pre><code class="language-shell">&gt; ros2 param get /turtlesim background_g
+Integer value is: 86
+</code></pre>
+<p>现在我们就知道了参数 <code>background_g</code> 的类型是整型。</p>
+<p>如果你使用该命令查看参数 <code>background_r</code> 和 <code>background_b</code> 的值，会分别收到整型值 <code>69</code> 和 <code>255</code>.</p>
+<h3 id="4-ros2-param-set"><a class="header" href="#4-ros2-param-set">4. ros2 param set</a></h3>
+<p>若要在运行时更改参数值，请使用以下命令:</p>
+<pre><code class="language-shell">ros2 param set &lt;node_name&gt; &lt;parameter_name&gt; &lt;value&gt;
+</code></pre>
+<p>让我们改变 <code>/turtlesim</code> 的背景颜色:</p>
+<pre><code class="language-shell">&gt; ros2 param set /turtlesim background_r 150
+Set parameter successful
+</code></pre>
+<p>而且你的 turtlesim 窗口的背景应该改变颜色:</p>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20parameters/set.png" alt="set" /></p>
+<p>使用 <code>ros2 param set</code> 命令设置参数只会在当前会话中更改它们，而不会永久更改。但是，您可以保存设置并在下次启动 node 时重新加载它们。</p>
+<blockquote>
+<p>注意</p>
+<p>这里的 “本次会话” 应该指该 node 在本次进程运行过程中阶段，目前看等价于进程的生命周期。</p>
+</blockquote>
+<h3 id="5-ros2-param-dump"><a class="header" href="#5-ros2-param-dump">5. ros2 param dump</a></h3>
+<p>您可以使用以下命令查看一个 node 的所有当前参数值:</p>
+<pre><code class="language-shell">ros2 param dump &lt;node_name&gt;
+</code></pre>
+<p>默认情况下，该命令将打印到标准输出流（stdout），但是您也可以将参数值重定向到一个文件中，以便稍后保存它们。要将 <code>/turtlesim</code> 的参数的当前配置保存到 <code>turtlesim.yaml</code> 文件中，输入以下命令:</p>
+<pre><code class="language-shell">ros2 param dump /turtlesim &gt; turtlesim.yaml
+</code></pre>
+<p>你会发现一个新的文件在你的 shell 运行的工作目录中。如果你打开这个文件，你会看到以下内容:</p>
+<pre><code class="language-yaml">/turtlesim:
+  ros__parameters:
+    background_b: 255
+    background_g: 86
+    background_r: 150
+    qos_overrides:
+      /parameter_events:
+        publisher:
+          depth: 1000
+          durability: volatile
+          history: keep_last
+          reliability: reliable
+    use_sim_time: false
+</code></pre>
+<p>如果将来希望重新加载具有相同参数的 node，<code>ros2 param dump</code> 命令就很方便。</p>
+<h3 id="6-ros2-param-load"><a class="header" href="#6-ros2-param-load">6. ros2 param load</a></h3>
+<p>可以使用以下命令将参数从文件加载到当前正在运行的 node:</p>
+<pre><code class="language-shell">ros2 param load &lt;node_name&gt; &lt;parameter_file&gt;
+</code></pre>
+<p>要将使用 <code>ros2 param dump</code> 生成的 <code>turtlesim.yaml</code> 文件加载到 <code>/turtlesim</code> node 的参数中，输入以下命令:</p>
+<pre><code class="language-shell">&gt; ros2 param load /turtlesim turtlesim.yaml
+Set parameter background_b successful
+Set parameter background_g successful
+Set parameter background_r successful
+Set parameter qos_overrides./parameter_events.publisher.depth failed: parameter 'qos_overrides./parameter_events.publisher.depth' cannot be set because it is read-only
+Set parameter qos_overrides./parameter_events.publisher.durability failed: parameter 'qos_overrides./parameter_events.publisher.durability' cannot be set because it is read-only
+Set parameter qos_overrides./parameter_events.publisher.history failed: parameter 'qos_overrides./parameter_events.publisher.history' cannot be set because it is read-only
+Set parameter qos_overrides./parameter_events.publisher.reliability failed: parameter 'qos_overrides./parameter_events.publisher.reliability' cannot be set because it is read-only
+Set parameter use_sim_time successful
+</code></pre>
+<blockquote>
+<p>注意</p>
+<p>只读参数只能在启动时修改，而不能在启动后修改，这就是为什么有一些关于 “qos_overrides” 参数的警告。</p>
+</blockquote>
+<h3 id="7-在-node-启动时加载参数文件"><a class="header" href="#7-在-node-启动时加载参数文件">7. 在 node 启动时加载参数文件</a></h3>
+<p>要使用保存的参数值启动同一个 node，请使用:</p>
+<pre><code class="language-shell">ros2 run &lt;package_name&gt; &lt;executable_name&gt; --ros-args --params-file &lt;file_name&gt;
+</code></pre>
+<p>与你经常使用的启动 turtlesim 的命令差不多，只不过后面追加了 <code>--ros-args</code> 选项，以及 <code>--params-file</code> 选项，最后就是你想加载的参数配置文件路径了。</p>
+<p>这样在停止前将 node 参数信息输出到一个文件中，下次再次启动时就可以回复上次退出时的状态了：</p>
+<pre><code class="language-shell">ros2 run turtlesim turtlesim_node --ros-args --params-file turtlesim.yaml
+</code></pre>
+<p>turtlesim 窗口还是像往常那样出现，但是窗口的背景色应该是你之前设置过的颜色了。</p>
+<blockquote>
+<p>注意</p>
+<p>在这种情况下，参数在启动时被修改，这样指定的只读参数也将生效。</p>
+</blockquote>
+<h2 id="小结-5"><a class="header" href="#小结-5">小结</a></h2>
+<p>Nodes 具有定义其默认配置值的参数。您可以从命令行获取和设置参数值。您还可以将参数设置保存到文件中，以便在以后的会话中重新加载它们。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="理解-ros2-actions"><a class="header" href="#理解-ros2-actions">理解 ROS2 actions</a></h1>
+<h2 id="目录-8"><a class="header" href="#目录-8">目录</a></h2>
+<ul>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20actions/intro.html#%E8%83%8C%E6%99%AF">背景</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20actions/intro.html#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a>
+<ul>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20actions/intro.html#1-%E8%AE%BE%E7%BD%AE">1. 设置</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20actions/intro.html#2-%E4%BD%BF%E7%94%A8-actions">2. 使用 actions</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20actions/intro.html#3-ros2-node-info">3. ros2 node info</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20actions/intro.html#4-ros2-action-list">4. ros2 action list</a>
+<ul>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20actions/intro.html#41-ros2-action-list--t">4.1. ros2 action list -t</a></li>
+</ul>
+</li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20actions/intro.html#5-ros2-action-info">5. ros2 action info</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20actions/intro.html#6-ros2-interface-show">6. ros2 interface show</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20actions/intro.html#7-ros2-action-send_goal">7. ros2 action send_goal</a></li>
+</ul>
+</li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20actions/intro.html#%E5%B0%8F%E7%BB%93">小结</a></li>
+</ul>
+<h2 id="背景-6"><a class="header" href="#背景-6">背景</a></h2>
+<p>动作（actions）是 ROS2 中的通信类型之一，主要用于长时间运行的任务。它们由三部分组成: 目标（goal）、反馈（feedback）和结果（result）。</p>
+<p>Actions 是基于 topics 和 services 构建的（这也是为什么要在介绍完 topics 和 services 后才介绍 actions 的原因）。它们的功能类似于 services，只是 actions 是可以被取消的。并且 actions 可以提供稳定的反馈信息，与之不同的是 services 只会返回一个单独的响应信息。</p>
+<p>Actions 使用 client-server 模型，action 的 client node 发送一个目标给 action 的 server node，作为响应，action 的 server 会返回一系列反馈以及最后一个结果。</p>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20actions/Action-SingleActionClient.gif" alt="action-singleActionClient" /></p>
+<blockquote>
+<p>注意</p>
+<p>从上图中可以看到，action 的信息交换步骤大致分为几个阶段：</p>
+<ol>
+<li>Action client 向 Goal Service 发送请求，action server 响应该请求。此时 Goal Service 的一来一回的请求响应完毕</li>
+<li>Action client 向 Result Service 发送请求，此时 action server 没有立刻响应该请求，而是通过 Feedback Topic 不停地传输消息给 action client。这个过程可能是一系列数据包的发送，因此官方使用 stream 一词来描述该 Feedback Topic 交互。该过程可以认为 Result Service 的交互只进行了一半，卡在那里没有结束，action client 不停地从 Feedback Topic 上接收消息流</li>
+<li>当 action server 确定交互即将完毕时，不再向 Feedback Topic 发送消息，而是响应 Result Service 发送最后的结果给 action 的 client。这一步才算将 Result Service 的交互完全画上句号</li>
+</ol>
+<p>这就是整个 action client 与 server 的交互过程。</p>
+</blockquote>
+<h2 id="前提条件-6"><a class="header" href="#前提条件-6">前提条件</a></h2>
+<h3 id="1-设置-3"><a class="header" href="#1-设置-3">1. 设置</a></h3>
+<p>启动两个 <code>turtlesim</code> nodes —— <code>/turtlesim</code> 和 <code>/teleop_turtle</code>。</p>
+<p>打开一个终端并输入：</p>
+<pre><code class="language-shell">ros2 run turtlesim turtlesim_node
+</code></pre>
+<p>再打开另一个终端并输入：</p>
+<pre><code class="language-shell">ros2 run turtlesim turtle_teleop_key
+</code></pre>
+<h3 id="2-使用-actions"><a class="header" href="#2-使用-actions">2. 使用 actions</a></h3>
+<p>当您启动 <code>/teleop_turtle</code> node 时，您将在终端中看到以下消息:</p>
+<pre><code class="language-shell">Use arrow keys to move the turtle.
+Use G|B|V|C|D|E|R|T keys to rotate to absolute orientations. 'F' to cancel a rotation.
+'Q' to quit.
+</code></pre>
+<p>让我们关注第二行，它对应于一个 action。（第一条指令对应于 <a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E7%90%86%E8%A7%A3%20ROS2%20actions/../%E7%90%86%E8%A7%A3%20ROS2%20topics/intro.html">topic 教程</a> 前面讨论的 <code>cmd_vel</code> topic。）</p>
+<p>注意到 <code>G|B|V|C|D|E|R|T</code> 基本上在 QWERTY 风格键盘上都是围绕 <code>F</code> 按键组成的一圈按键。在 <code>F</code> 周围的每个键的位置都对应于在海龟的那个方向（想象以下街机游戏 KOF，这里特别像摇杆的方向）。例如，<code>E</code> 将乌龟的方向旋转到左上角。</p>
+<p>请注意运行 <code>/turtlesim</code> node 的终端。每次按下其中一个键时，就向 <code>/turtlesim</code> node 的一个动作 server 发送一个目标（goal）。我们的目标（goal）是让海龟旋转到一个特定的方向。一旦海龟完成旋转，应该会显示一条信息，传递目标（goal）的结果（result）:</p>
+<pre><code class="language-shell">[INFO] [turtlesim]: Rotation goal completed successfully
+</code></pre>
+<p><code>F</code> 键会取消一个在执行中的目标（goal）。</p>
+<p>试着按 <code>C</code> 键，然后在乌龟完成旋转之前按 <code>F</code> 键。在运行 <code>/turtlesim</code> node 的终端中，您将看到以下消息:</p>
+<pre><code class="language-shell">[INFO] [turtlesim]: Rotation goal canceled
+</code></pre>
+<p>不仅动作的 client（你在远程操作中的输入）可以取消一个目标，动作的 server（<code>/turtlesim</code> node）也可以取消一个目标。</p>
+<p>试着按 <code>D</code> 键，然后在第一次旋转前按 <code>G</code> 键就可以完成。在运行 <code>/turtlesim</code> node 的终端中，您将看到以下消息:</p>
+<pre><code class="language-shell">[WARN] [turtlesim]: Rotation goal received before a previous goal finished. Aborting previous goal
+</code></pre>
+<p>这个动作 server 选择放弃前一个目标，因为它收到了一个新的目标。但是不要假设每个动作 server 在得到一个新目标时都会选择放弃前一个目标。它可以选择做其他的事情，比如拒绝新的目标，或者在第一个目标完成后再执行第二个目标。</p>
+<h3 id="3-ros2-node-info-1"><a class="header" href="#3-ros2-node-info-1">3. ros2 node info</a></h3>
+<p>要查看 <code>/turtlesim</code> node 的动作列表，打开一个新的终端并运行以下命令:</p>
+<p>它将返回 <code>/turtlesim</code> 的订阅者、发布者、Service Server、动作 Server 和动作 Client 的列表:</p>
+<pre><code class="language-shell">&gt; ros2 node info /turtlesim
+/turtlesim
+  Subscribers:
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+    /turtle1/cmd_vel: geometry_msgs/msg/Twist
+  Publishers:
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+    /rosout: rcl_interfaces/msg/Log
+    /turtle1/color_sensor: turtlesim/msg/Color
+    /turtle1/pose: turtlesim/msg/Pose
+  Service Servers:
+    /clear: std_srvs/srv/Empty
+    /kill: turtlesim/srv/Kill
+    /reset: std_srvs/srv/Empty
+    /spawn: turtlesim/srv/Spawn
+    /turtle1/set_pen: turtlesim/srv/SetPen
+    /turtle1/teleport_absolute: turtlesim/srv/TeleportAbsolute
+    /turtle1/teleport_relative: turtlesim/srv/TeleportRelative
+    /turtlesim/describe_parameters: rcl_interfaces/srv/DescribeParameters
+    /turtlesim/get_parameter_types: rcl_interfaces/srv/GetParameterTypes
+    /turtlesim/get_parameters: rcl_interfaces/srv/GetParameters
+    /turtlesim/list_parameters: rcl_interfaces/srv/ListParameters
+    /turtlesim/set_parameters: rcl_interfaces/srv/SetParameters
+    /turtlesim/set_parameters_atomically: rcl_interfaces/srv/SetParametersAtomically
+  Service Clients:
+
+  Action Servers:
+    /turtle1/rotate_absolute: turtlesim/action/RotateAbsolute
+  Action Clients:
+
+</code></pre>
+<p>注意, <code>/turtlesim</code> node 的 <code>/turtle1/rotate_absolute</code> 动作属于动作 Servers。这意味着 <code>/turtlesim</code> 响应 <code>/turtle1/rotate_absolute</code> 动作 Client（显然，这里是指 <code>/teleop_turtle</code> node）并提供反馈。</p>
+<p><code>/teleop_turtle</code> node 拥有名为 <code>/turtle1/rotate_absolute</code> 动作的 Clients，这意味着它为该名称的动作发送目标。</p>
+<pre><code class="language-shell">&gt; ros2 node info /teleop_turtle
+/teleop_turtle
+  Subscribers:
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+  Publishers:
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+    /rosout: rcl_interfaces/msg/Log
+    /turtle1/cmd_vel: geometry_msgs/msg/Twist
+  Service Servers:
+    /teleop_turtle/describe_parameters: rcl_interfaces/srv/DescribeParameters
+    /teleop_turtle/get_parameter_types: rcl_interfaces/srv/GetParameterTypes
+    /teleop_turtle/get_parameters: rcl_interfaces/srv/GetParameters
+    /teleop_turtle/list_parameters: rcl_interfaces/srv/ListParameters
+    /teleop_turtle/set_parameters: rcl_interfaces/srv/SetParameters
+    /teleop_turtle/set_parameters_atomically: rcl_interfaces/srv/SetParametersAtomically
+  Service Clients:
+
+  Action Servers:
+
+  Action Clients:
+    /turtle1/rotate_absolute: turtlesim/action/RotateAbsolute
+</code></pre>
+<h3 id="4-ros2-action-list"><a class="header" href="#4-ros2-action-list">4. ros2 action list</a></h3>
+<p>要识别 ROS 图中的所有操作，请运行以下命令:</p>
+<pre><code class="language-shell">&gt; ros2 action list
+/turtle1/rotate_absolute
+</code></pre>
+<p>可以看到，<code>/turtle1/rotate_absolute</code> 是目前 ROS 图中唯一的动作元素。正如你之前看到的，它控制着海龟的旋转。您还知道，使用 <code>ros2 node info &lt;node_name&gt;</code> 命令查看该动作的 client（<code>/teleop_turtle</code> node 的一部分）和 server（<code>/turtlesim</code> node 的一部分）。</p>
+<h4 id="41-ros2-action-list--t"><a class="header" href="#41-ros2-action-list--t">4.1. ros2 action list -t</a></h4>
+<p>类似于 topic 和 service，动作（action）也是有类型的。要查找 <code>/turtle1/rotate_absolute</code> 动作的类型，运行以下命令:</p>
+<pre><code class="language-shell">&gt; ros2 action list -t
+/turtle1/rotate_absolute [turtlesim/action/RotateAbsolute]
+</code></pre>
+<p>在每个动作名称右边的括号中（在本例中仅为 <code>/turtle1/rotate_absolute</code> 一个动作）是动作的类型，本例中为 <code>turtlesim/action/RotateAbsolute</code>。当您希望从命令行或代码向该动作发送目标时，将需要此命令获取必要的信息。</p>
+<h3 id="5-ros2-action-info"><a class="header" href="#5-ros2-action-info">5. ros2 action info</a></h3>
+<p>您可以使用以下命令进一步查看 <code>/turtle1/rotate_absolute</code> 类型动作:</p>
+<pre><code class="language-shell">&gt; ros2 action info /turtle1/rotate_absolute
+Action: /turtle1/rotate_absolute
+Action clients: 1
+    /teleop_turtle
+Action servers: 1
+    /turtlesim
+</code></pre>
+<p>这告诉我们之前在每个 node 上运行 <code>ros2 node info</code> 命令时学到了什么：<code>/teleop_turtle</code> node 有一个动作 client，<code>/turtleim</code> node 有一个动作 server 用于 <code>/turtle1/rotate_absolute</code> 动作。</p>
+<h3 id="6-ros2-interface-show-1"><a class="header" href="#6-ros2-interface-show-1">6. ros2 interface show</a></h3>
+<p>在您自己发送或执行一个动作目标之前，您还需要知道动作类型的结构信息。</p>
+<p>回想一下，在运行命令 <code>ros2 action list -t</code> 时，您识别了 <code>/turtle1/rotate_absolute</code> 的动作类型，在您的终端中输入以下命令的动作类型:</p>
+<pre><code class="language-shell">&gt; ros2 interface show turtlesim/action/RotateAbsolute
+# The desired heading in radians
+float32 theta
+---
+# The angular displacement in radians to the starting position
+float32 delta
+---
+# The remaining rotation in radians
+float32 remaining
+</code></pre>
+<p>该消息的第一部分 <code>---</code> 之上是目标请求的结构（数据类型和名称。还记得开头讲解的吗？动作一开始是 client 向 goal service 发送请求，动作 server 做出该 goal service 的响应）。下一部分是结果（result）的结构。最后一部分是反馈（feedback topic 的消息体）的结构。</p>
+<h3 id="7-ros2-action-send_goal"><a class="header" href="#7-ros2-action-send_goal">7. ros2 action send_goal</a></h3>
+<p>现在让我们从命令行发送一个动作的目标，语法如下:</p>
+<pre><code class="language-shell">ros2 action send_goal &lt;action_name&gt; &lt;action_type&gt; &lt;values&gt;
+</code></pre>
+<p>其中 <code>&lt;values&gt;</code> 参数需要是 YAML 格式的数据。</p>
+<p>注意观察 turtlesim 窗口，在终端中输入以下命令:</p>
+<pre><code class="language-shell">&gt; ros2 action send_goal /turtle1/rotate_absolute turtlesim/action/RotateAbsolute &quot;{theta: 1.57}&quot;
+Waiting for an action server to become available...
+Sending goal:
+     theta: 1.57
+
+Goal accepted with ID: 291cc99a015d4a9b8ea257fb463ba7fa
+
+Result:
+    delta: -1.5520000457763672
+
+Goal finished with status: SUCCEEDED
+</code></pre>
+<p>你应该可以看到海龟在旋转，以及在你的终端中看到上述信息。</p>
+<p>所有动作的目标都有一个惟一的 ID，显示在返回消息中。您还可以看到结果，一个名为 <code>delta</code> 的字段，它是从起始位置（0 度）开始旋转的弧度信息（因为 Π/2≈1.57，即 90 度。回忆一下，如果向右是正方向，那么逆时针旋转为正角，顺时针旋转为负角，所以 1.57 为逆时针旋转 90 度）。</p>
+<p>要查看这个动作目标的反馈消息内容，请添加 <code>--feedback</code> 选项到 <code>ros2 action send_goal</code> 命令后面:</p>
+<pre><code class="language-shell">&gt; ros2 action send_goal /turtle1/rotate_absolute turtlesim/action/RotateAbsolute &quot;{theta: -1.57}&quot; --feedback
+Sending goal:
+   theta: -1.57
+
+Goal accepted with ID: e6092c831f994afda92f0086f220da27
+
+Feedback:
+  remaining: -3.1268222332000732
+
+Feedback:
+  remaining: -3.1108222007751465
+
+…
+
+Result:
+  delta: 3.1200008392333984
+
+Goal finished with status: SUCCEEDED
+</code></pre>
+<p>您将连续收到 N 多的反馈消息体（单位：弧度），直到目标最终完成，返回结果消息体。</p>
+<h2 id="小结-6"><a class="header" href="#小结-6">小结</a></h2>
+<p>动作类似于 service，但它允许您执行长时间运行的任务，提供多次连续的反馈消息，并且是可以取消的。</p>
+<p>机器人系统很可能使用动作来导航。一个动作的目标可以告诉机器人移动到一个位置。当机器人导航到位置时，它可以沿途发送一系列更新（即反馈），然后在到达目的地后发送最终结果消息。</p>
+<p>Turtlesim 有一个动作 server，动作 client 可以向它发送旋转乌龟的动作目标。在本教程中，您内省了 <code>/turtle1/rotate_absolute</code> 这个动作的信息，以便更好地了解什么是动作以及它们是如何工作的。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="使用-rqt_console"><a class="header" href="#使用-rqt_console">使用 rqt_console</a></h1>
+<h2 id="目录-9"><a class="header" href="#目录-9">目录</a></h2>
+<ul>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BD%BF%E7%94%A8%20rqt_console/intro.html#%E8%83%8C%E6%99%AF">背景</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BD%BF%E7%94%A8%20rqt_console/intro.html#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a>
+<ul>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BD%BF%E7%94%A8%20rqt_console/intro.html#1-%E8%AE%BE%E7%BD%AE">1. 设置</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BD%BF%E7%94%A8%20rqt_console/intro.html#2-%E5%9C%A8-rqt_console-%E4%B8%8A%E7%9A%84%E4%BF%A1%E6%81%AF">2. 在 rqt_console 上的信息</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BD%BF%E7%94%A8%20rqt_console/intro.html#3-%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB">3. 日志级别</a>
+<ul>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BD%BF%E7%94%A8%20rqt_console/intro.html#31-%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E7%9A%84%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB">3.1. 设置默认的日志级别</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BD%BF%E7%94%A8%20rqt_console/intro.html#%E5%B0%8F%E7%BB%93">小结</a></li>
+</ul>
+<h2 id="背景-7"><a class="header" href="#背景-7">背景</a></h2>
+<p><code>rqt_console</code> 是一个 GUI 工具，用来内省 ROS2 中的日志信息。通常，ROS2 的日志消息显示在终端中。使用 <code>rqt_console</code>，您可以随着时间的推移收集这些消息，以更有组织的方式仔细查看它们，过滤它们，保存它们，甚至在不同的时间重新加载保存的文件以便自省。</p>
+<p>Nodes 使用日志以多种方式输出有关事件和状态的消息。为了用户的隐私性考虑，他们的内容通常是信息性的。</p>
+<h2 id="前提条件-7"><a class="header" href="#前提条件-7">前提条件</a></h2>
+<h3 id="1-设置-4"><a class="header" href="#1-设置-4">1. 设置</a></h3>
+<p>在新的终端中输入下面命令启动 <code>rqt_console</code>:</p>
+<pre><code class="language-shell">ros2 run rqt_console rqt_console
+</code></pre>
+<p>会打开 <code>rqt_console</code> 窗口：</p>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BD%BF%E7%94%A8%20rqt_console/console.png" alt="console" /></p>
+<p>控制台的第一部分将显示来自系统的日志消息。</p>
+<p>在中间，您可以选择通过排除严重级别来过滤消息。您还可以使用右侧的加号按钮添加更多的排除过滤器。</p>
+<p>底部部分用于突出显示包含您输入的字符串的消息。您还可以在这一节中添加更多的过滤器。</p>
+<p>现在用下面的命令在一个新的终端中启动 <code>turtlesim</code>:</p>
+<pre><code class="language-shell">ros2 run turtlesim turtlesim_node
+</code></pre>
+<p>再新开一个终端用于控制海龟：</p>
+<pre><code class="language-shell">ros2 run turtlesim turtle_teleop_key
+</code></pre>
+<h3 id="2-在-rqt_console-上的信息"><a class="header" href="#2-在-rqt_console-上的信息">2. 在 rqt_console 上的信息</a></h3>
+<p>为了生成 <code>rqt_console</code> 要显示的日志消息，我们让海龟撞到墙上去。我们使用 <code>turtle_teleop_key</code> 要海龟一直向前走，撞到窗口边沿（墙上）。</p>
+<p>由于上面的操作，所以龟不断地撞到墙上。在 <code>rqt_console</code> 中，您将看到相同的消息，其中 <code>Warn</code> 严重级别反复显示，如下所示:</p>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BD%BF%E7%94%A8%20rqt_console/turtlesim.png" alt="window" /></p>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BD%BF%E7%94%A8%20rqt_console/hit_the_wall.png" alt="hit_the_wall" /></p>
+<h3 id="3-日志级别"><a class="header" href="#3-日志级别">3. 日志级别</a></h3>
+<p>ROS2 的日志级别按照严重程度从高到低排列为：</p>
+<pre><code class="language-shell">Fatal
+Error
+Warn
+Info
+Debug
+</code></pre>
+<p>对于每个等级表明了什么，没有确切的标准，但可以肯定地假设:</p>
+<ul>
+<li><code>Fatal</code> 消息表明系统将要终止，以试图保护自己免受损害。</li>
+<li><code>Error</code> 消息显示出不一定会破坏系统的重大问题，但会阻碍系统正常运行。</li>
+<li><code>Warn</code> 消息表示可能代表更深层次问题的意外活动或非理想结果，但不会直接损害功能。</li>
+<li><code>Info</code> 消息指示事件和状态更新，作为系统正按预期运行的可视化验证。</li>
+<li><code>Debug</code> 消息详细说明系统执行的整个一步一步的过程。</li>
+</ul>
+<p>默认级别是 <code>Info</code>。您将只看到默认严重级别和更严重级别的消息。</p>
+<p>通常情况下，只有 <code>Debug</code> 消息是隐藏的，因为它们是唯一低于 <code>Info</code> 的级别。例如，如果将默认级别设置为 <code>Warn</code>，则只会看到级别 <code>Warn</code>、 <code>Error</code> 和 <code>Fatal</code> 的消息。</p>
+<h4 id="31-设置默认的日志级别"><a class="header" href="#31-设置默认的日志级别">3.1. 设置默认的日志级别</a></h4>
+<p>您可以在第一次运行 <code>/turtlesim</code> node 时使用重新映射设置默认的日志级别。在终端中输入以下命令:</p>
+<pre><code class="language-shell">ros2 run turtlesim turtlesim_node --ros-args --log-level WARN
+</code></pre>
+<p>现在你不会看到上一次你启动 turtlesim 时出现在控制台的信息级别警告。这是因为 <code>Info</code> 消息的优先级低于新的默认级别 <code>Warn</code>。</p>
+<h2 id="小结-7"><a class="header" href="#小结-7">小结</a></h2>
+<p><code>rqt_console</code> 如果您需要仔细检查来自系统的日志消息，那么它会非常有帮助。您可能希望根据各种原因检查日志消息，通常是为了找出出错的地方以及导致出错的一系列事件。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="介绍-ros2-launch"><a class="header" href="#介绍-ros2-launch">介绍 ROS2 launch</a></h1>
+<h2 id="目录-10"><a class="header" href="#目录-10">目录</a></h2>
+<ul>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BB%8B%E7%BB%8D%20ROS2%20launch/intro.html#%E8%83%8C%E6%99%AF">背景</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BB%8B%E7%BB%8D%20ROS2%20launch/intro.html#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a>
+<ul>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BB%8B%E7%BB%8D%20ROS2%20launch/intro.html#%E8%BF%90%E8%A1%8C%E5%90%AF%E5%8A%A8%E6%96%87%E4%BB%B6">运行启动文件</a></li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BB%8B%E7%BB%8D%20ROS2%20launch/intro.html#%E5%8F%AF%E9%80%89%E6%8E%A7%E5%88%B6-turtlesim-nodes">（可选）控制 turtlesim nodes</a></li>
+</ul>
+</li>
+<li><a href="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BB%8B%E7%BB%8D%20ROS2%20launch/intro.html#%E5%B0%8F%E7%BB%93">小结</a></li>
+</ul>
+<h2 id="背景-8"><a class="header" href="#背景-8">背景</a></h2>
+<p>在大多数介绍性教程中，您已经为运行的每个新 node 打开了新的终端。当您创建越来越复杂的系统，并且有越来越多的 nodes 同时运行时，打开终端和重新输入配置细节将变得非常繁琐。</p>
+<p>启动文件（launch file）允许您同时启动和配置许多包含 ROS2 nodes 的可执行文件。</p>
+<p>使用 <code>ros2 launch</code> 命令运行一个启动文件将立即启动您的整个系统 —— 所有 nodes 及其配置。</p>
+<h2 id="前提条件-8"><a class="header" href="#前提条件-8">前提条件</a></h2>
+<p>在开始这些教程之前，请按照 ROS2 安装页面上的说明安装 ROS2。</p>
+<h3 id="运行启动文件"><a class="header" href="#运行启动文件">运行启动文件</a></h3>
+<p>打开终端并运行：</p>
+<pre><code class="language-shell">ros2 launch turtlesim multisim.launch.py
+</code></pre>
+<p>这个命令将运行以下启动文件:</p>
+<pre><code class="language-python"># turtlesim/launch/multisim.launch.py
+
+from launch import LaunchDescription
+import launch_ros.actions
+
+def generate_launch_description():
+    return LaunchDescription([
+        launch_ros.actions.Node(
+            namespace= &quot;turtlesim1&quot;, package='turtlesim', executable='turtlesim_node', output='screen'),
+        launch_ros.actions.Node(
+            namespace= &quot;turtlesim2&quot;, package='turtlesim', executable='turtlesim_node', output='screen'),
+    ])
+</code></pre>
+<blockquote>
+<p>注意</p>
+<p>上面的启动文件是用 Python 编写的，但是您也可以使用 XML 和 YAML 来创建启动文件。您可以在 <a href="http://docs.ros.org/en/humble/How-To-Guides/Launch-file-different-formats.html">Using Python、 XML and YAML for ROS2 Launch Files</a> 中看到这些不同的 ROS2 启动格式的比较。</p>
+</blockquote>
+<p>这将运行两个 turtlesim nodes:</p>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BB%8B%E7%BB%8D%20ROS2%20launch/turtlesim_multisim.png" alt="turtlesim_multisim" /></p>
+<p>现在，不要担心这个启动文件的内容。你可以在 <a href="http://docs.ros.org/en/humble/Tutorials/Launch/Launch-Main.html">ROS2 启动教程</a> 中找到更多关于 ROS2 启动的信息。</p>
+<h3 id="可选控制-turtlesim-nodes"><a class="header" href="#可选控制-turtlesim-nodes">（可选）控制 turtlesim nodes</a></h3>
+<p>现在这些 turtlesim nodes 正在运行，您可以像控制其他 ROS2 nodes 一样控制它们。例如，你可以通过打开另外两个终端并运行以下命令，让海龟朝相反的方向行驶:</p>
+<p>在第二个终端输入：</p>
+<pre><code class="language-shell">ros2 topic pub  /turtlesim1/turtle1/cmd_vel geometry_msgs/msg/Twist &quot;{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 1.8}}&quot;
+</code></pre>
+<p>在第三个终端输入：</p>
+<pre><code class="language-shell">ros2 topic pub  /turtlesim2/turtle1/cmd_vel geometry_msgs/msg/Twist &quot;{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: -1.8}}&quot;
+</code></pre>
+<p>在运行这些命令之后，您应该会看到如下内容（一个顺时针转，一个逆时针转）:</p>
+<p><img src="02.ROS2%E6%95%99%E7%A8%8B/%E5%88%9D%E7%BA%A7/%E4%BB%8B%E7%BB%8D%20ROS2%20launch/turtlesim_multisim_spin.png" alt="turtlesim_multisim_spin" /></p>
+<h2 id="小结-8"><a class="header" href="#小结-8">小结</a></h2>
+<p>到目前为止，您所做的工作的重要意义在于，您已经使用一个命令运行了两个 turtlesim nodes。一旦您学会了编写自己的启动文件，您将能够以类似的方式运行多个节点——并设置它们的配置 —— 使用 <code>ros2 launch</code> 命令。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="how-to-指南"><a class="header" href="#how-to-指南">How-to 指南</a></h1>
 <p><a href="http://docs.ros.org/en/humble/How-To-Guides.html">todo</a></p>
 

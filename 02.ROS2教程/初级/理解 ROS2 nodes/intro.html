@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../../../01.ROS概述与环境搭建/intro.html"><strong aria-hidden="true">1.</strong> 第一章 ROS概述与环境搭建</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../01.ROS概述与环境搭建/Ubuntu debian.html"><strong aria-hidden="true">1.1.</strong> Ubuntu Linux（Debian packages）</a></li><li class="chapter-item expanded "><a href="../../../01.ROS概述与环境搭建/Windows 二进制.html"><strong aria-hidden="true">1.2.</strong> Windows（二进制）安装</a></li><li class="chapter-item expanded "><a href="../../../01.ROS概述与环境搭建/macos.html"><strong aria-hidden="true">1.3.</strong> MacOS（源码）</a></li></ol></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/intro.html"><strong aria-hidden="true">2.</strong> 第二章 ROS2教程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/配置你的 ROS2 环境.html"><strong aria-hidden="true">2.1.</strong> 配置你的 ROS2 环境</a></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/介绍 turtlesim 和 rqt/intro.html"><strong aria-hidden="true">2.2.</strong> 介绍 turtlesim 和 rqt</a></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/理解 ROS2 nodes/intro.html" class="active"><strong aria-hidden="true">2.3.</strong> 理解 ROS2 nodes</a></li></ol></li><li class="chapter-item expanded "><a href="../../../03.How-to指南/intro.html"><strong aria-hidden="true">3.</strong> 第三章 How-to指南</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../../01.ROS概述与环境搭建/intro.html"><strong aria-hidden="true">1.</strong> 第一章 ROS概述与环境搭建</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../01.ROS概述与环境搭建/Ubuntu debian.html"><strong aria-hidden="true">1.1.</strong> Ubuntu Linux（Debian packages）</a></li><li class="chapter-item expanded "><a href="../../../01.ROS概述与环境搭建/Windows 二进制.html"><strong aria-hidden="true">1.2.</strong> Windows（二进制）</a></li><li class="chapter-item expanded "><a href="../../../01.ROS概述与环境搭建/macos.html"><strong aria-hidden="true">1.3.</strong> MacOS（源码）</a></li></ol></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/intro.html"><strong aria-hidden="true">2.</strong> 第二章 ROS2教程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/配置你的 ROS2 环境.html"><strong aria-hidden="true">2.1.</strong> 配置你的 ROS2 环境</a></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/介绍 turtlesim 和 rqt/intro.html"><strong aria-hidden="true">2.2.</strong> 介绍 turtlesim 和 rqt</a></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/理解 ROS2 nodes/intro.html" class="active"><strong aria-hidden="true">2.3.</strong> 理解 ROS2 nodes</a></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/理解 ROS2 topics/intro.html"><strong aria-hidden="true">2.4.</strong> 理解 ROS2 topics</a></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/理解 ROS2 services/intro.html"><strong aria-hidden="true">2.5.</strong> 理解 ROS2 services</a></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/理解 ROS2 parameters/intro.html"><strong aria-hidden="true">2.6.</strong> 理解 ROS2 parameters</a></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/理解 ROS2 actions/intro.html"><strong aria-hidden="true">2.7.</strong> 理解 ROS2 actions</a></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/使用 rqt_console/intro.html"><strong aria-hidden="true">2.8.</strong> 使用 rqt_console</a></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/介绍 ROS2 launch/intro.html"><strong aria-hidden="true">2.9.</strong> 介绍 ROS2 launch</a></li></ol></li><li class="chapter-item expanded "><a href="../../../03.How-to指南/intro.html"><strong aria-hidden="true">3.</strong> 第三章 How-to指南</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -151,7 +151,7 @@
 <li><a href="#2-ros2-%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9nodes">2. ROS2 中的节点（nodes）</a></li>
 </ul>
 </li>
-<li><a href="#%E5%89%8D%E6%8F%90">前提</a>
+<li><a href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a>
 <ul>
 <li><a href="#1-ros2-run">1. ros2 run</a></li>
 <li><a href="#2-ros2-node-list">2. ros2 node list</a>
@@ -168,10 +168,10 @@
 <h3 id="1-ros2-图"><a class="header" href="#1-ros2-图">1. ROS2 图</a></h3>
 <p>ROS2 图是一个同时处理数据的 ROS2 元素的网络。如果要将所有可执行文件映射出来并对其进行可视化，那么它包含了所有可执行文件以及它们之间的连接。</p>
 <h3 id="2-ros2-中的节点nodes"><a class="header" href="#2-ros2-中的节点nodes">2. ROS2 中的节点（nodes）</a></h3>
-<p>ROS 中的每个 node 应该负责一个单一的模块用途（例如，一个节点用于控制车轮马达，一个节点用于控制激光测距仪等）。每个 node 可以通过 topics、services、actions 或 parameters 向其他 node 发送和接收数据。</p>
+<p>ROS 中的每个 node 应该负责一个单一的模块用途（例如，一个 node 用于控制车轮马达，一个 node 用于控制激光测距仪等）。每个 node 可以通过 topics、services、actions 或 parameters 向其他 node 发送和接收数据。</p>
 <p><img src="Nodes-TopicandService.gif" alt="nodes" /></p>
 <p>一个完整的机器人系统由许多协同工作的 nodes 组成。在 ROS2 中，单个可执行程序（C++ 程序、Python 程序等）可以包含一个或多个 nodes。</p>
-<h2 id="前提"><a class="header" href="#前提">前提</a></h2>
+<h2 id="前提条件"><a class="header" href="#前提条件">前提条件</a></h2>
 <h3 id="1-ros2-run"><a class="header" href="#1-ros2-run">1. ros2 run</a></h3>
 <p>命令 <code>ros2 run</code> 会启动某个 ROS2 package 中的可执行文件：</p>
 <pre><code class="language-shell">ros2 run &lt;package_name&gt; &lt;executable_name&gt;
@@ -187,10 +187,10 @@
 <p>当 <code>turtlesim</code> 仍然在它所在终端中运行时打开一个新的终端，输入以下命令:</p>
 <pre><code class="language-shell">ros2 node list
 </code></pre>
-<p>终端将返回节点名:</p>
+<p>终端将返回 node 名:</p>
 <pre><code class="language-shell">/turtlesim
 </code></pre>
-<p>打开另一个新的终端，用以下命令启动远程操作节点:</p>
+<p>打开另一个新的终端，用以下命令启动远程操作 node:</p>
 <pre><code class="language-shell">ros2 run turtlesim turtle_teleop_key
 </code></pre>
 <p>在这里，我们再次搜索 <code>turtlesim</code> 包，这次是为了找名为 <code>turtle_teleop_key</code> 的可执行文件。</p>
@@ -260,7 +260,7 @@
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../../../03.How-to指南/intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../../../02.ROS2教程/初级/理解 ROS2 topics/intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -274,7 +274,7 @@
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../../../03.How-to指南/intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../../../02.ROS2教程/初级/理解 ROS2 topics/intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

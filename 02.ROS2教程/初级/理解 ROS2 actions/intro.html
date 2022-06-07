@@ -1,0 +1,415 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>理解 ROS2 actions - ROS机器人操作系统课程学习</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../../01.ROS概述与环境搭建/intro.html"><strong aria-hidden="true">1.</strong> 第一章 ROS概述与环境搭建</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../01.ROS概述与环境搭建/Ubuntu debian.html"><strong aria-hidden="true">1.1.</strong> Ubuntu Linux（Debian packages）</a></li><li class="chapter-item expanded "><a href="../../../01.ROS概述与环境搭建/Windows 二进制.html"><strong aria-hidden="true">1.2.</strong> Windows（二进制）</a></li><li class="chapter-item expanded "><a href="../../../01.ROS概述与环境搭建/macos.html"><strong aria-hidden="true">1.3.</strong> MacOS（源码）</a></li></ol></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/intro.html"><strong aria-hidden="true">2.</strong> 第二章 ROS2教程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/配置你的 ROS2 环境.html"><strong aria-hidden="true">2.1.</strong> 配置你的 ROS2 环境</a></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/介绍 turtlesim 和 rqt/intro.html"><strong aria-hidden="true">2.2.</strong> 介绍 turtlesim 和 rqt</a></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/理解 ROS2 nodes/intro.html"><strong aria-hidden="true">2.3.</strong> 理解 ROS2 nodes</a></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/理解 ROS2 topics/intro.html"><strong aria-hidden="true">2.4.</strong> 理解 ROS2 topics</a></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/理解 ROS2 services/intro.html"><strong aria-hidden="true">2.5.</strong> 理解 ROS2 services</a></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/理解 ROS2 parameters/intro.html"><strong aria-hidden="true">2.6.</strong> 理解 ROS2 parameters</a></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/理解 ROS2 actions/intro.html" class="active"><strong aria-hidden="true">2.7.</strong> 理解 ROS2 actions</a></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/使用 rqt_console/intro.html"><strong aria-hidden="true">2.8.</strong> 使用 rqt_console</a></li><li class="chapter-item expanded "><a href="../../../02.ROS2教程/初级/介绍 ROS2 launch/intro.html"><strong aria-hidden="true">2.9.</strong> 介绍 ROS2 launch</a></li></ol></li><li class="chapter-item expanded "><a href="../../../03.How-to指南/intro.html"><strong aria-hidden="true">3.</strong> 第三章 How-to指南</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ROS机器人操作系统课程学习</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="理解-ros2-actions"><a class="header" href="#理解-ros2-actions">理解 ROS2 actions</a></h1>
+<h2 id="目录"><a class="header" href="#目录">目录</a></h2>
+<ul>
+<li><a href="#%E8%83%8C%E6%99%AF">背景</a></li>
+<li><a href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a>
+<ul>
+<li><a href="#1-%E8%AE%BE%E7%BD%AE">1. 设置</a></li>
+<li><a href="#2-%E4%BD%BF%E7%94%A8-actions">2. 使用 actions</a></li>
+<li><a href="#3-ros2-node-info">3. ros2 node info</a></li>
+<li><a href="#4-ros2-action-list">4. ros2 action list</a>
+<ul>
+<li><a href="#41-ros2-action-list--t">4.1. ros2 action list -t</a></li>
+</ul>
+</li>
+<li><a href="#5-ros2-action-info">5. ros2 action info</a></li>
+<li><a href="#6-ros2-interface-show">6. ros2 interface show</a></li>
+<li><a href="#7-ros2-action-send_goal">7. ros2 action send_goal</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B0%8F%E7%BB%93">小结</a></li>
+</ul>
+<h2 id="背景"><a class="header" href="#背景">背景</a></h2>
+<p>动作（actions）是 ROS2 中的通信类型之一，主要用于长时间运行的任务。它们由三部分组成: 目标（goal）、反馈（feedback）和结果（result）。</p>
+<p>Actions 是基于 topics 和 services 构建的（这也是为什么要在介绍完 topics 和 services 后才介绍 actions 的原因）。它们的功能类似于 services，只是 actions 是可以被取消的。并且 actions 可以提供稳定的反馈信息，与之不同的是 services 只会返回一个单独的响应信息。</p>
+<p>Actions 使用 client-server 模型，action 的 client node 发送一个目标给 action 的 server node，作为响应，action 的 server 会返回一系列反馈以及最后一个结果。</p>
+<p><img src="Action-SingleActionClient.gif" alt="action-singleActionClient" /></p>
+<blockquote>
+<p>注意</p>
+<p>从上图中可以看到，action 的信息交换步骤大致分为几个阶段：</p>
+<ol>
+<li>Action client 向 Goal Service 发送请求，action server 响应该请求。此时 Goal Service 的一来一回的请求响应完毕</li>
+<li>Action client 向 Result Service 发送请求，此时 action server 没有立刻响应该请求，而是通过 Feedback Topic 不停地传输消息给 action client。这个过程可能是一系列数据包的发送，因此官方使用 stream 一词来描述该 Feedback Topic 交互。该过程可以认为 Result Service 的交互只进行了一半，卡在那里没有结束，action client 不停地从 Feedback Topic 上接收消息流</li>
+<li>当 action server 确定交互即将完毕时，不再向 Feedback Topic 发送消息，而是响应 Result Service 发送最后的结果给 action 的 client。这一步才算将 Result Service 的交互完全画上句号</li>
+</ol>
+<p>这就是整个 action client 与 server 的交互过程。</p>
+</blockquote>
+<h2 id="前提条件"><a class="header" href="#前提条件">前提条件</a></h2>
+<h3 id="1-设置"><a class="header" href="#1-设置">1. 设置</a></h3>
+<p>启动两个 <code>turtlesim</code> nodes —— <code>/turtlesim</code> 和 <code>/teleop_turtle</code>。</p>
+<p>打开一个终端并输入：</p>
+<pre><code class="language-shell">ros2 run turtlesim turtlesim_node
+</code></pre>
+<p>再打开另一个终端并输入：</p>
+<pre><code class="language-shell">ros2 run turtlesim turtle_teleop_key
+</code></pre>
+<h3 id="2-使用-actions"><a class="header" href="#2-使用-actions">2. 使用 actions</a></h3>
+<p>当您启动 <code>/teleop_turtle</code> node 时，您将在终端中看到以下消息:</p>
+<pre><code class="language-shell">Use arrow keys to move the turtle.
+Use G|B|V|C|D|E|R|T keys to rotate to absolute orientations. 'F' to cancel a rotation.
+'Q' to quit.
+</code></pre>
+<p>让我们关注第二行，它对应于一个 action。（第一条指令对应于 <a href="../%E7%90%86%E8%A7%A3%20ROS2%20topics/intro.html">topic 教程</a> 前面讨论的 <code>cmd_vel</code> topic。）</p>
+<p>注意到 <code>G|B|V|C|D|E|R|T</code> 基本上在 QWERTY 风格键盘上都是围绕 <code>F</code> 按键组成的一圈按键。在 <code>F</code> 周围的每个键的位置都对应于在海龟的那个方向（想象以下街机游戏 KOF，这里特别像摇杆的方向）。例如，<code>E</code> 将乌龟的方向旋转到左上角。</p>
+<p>请注意运行 <code>/turtlesim</code> node 的终端。每次按下其中一个键时，就向 <code>/turtlesim</code> node 的一个动作 server 发送一个目标（goal）。我们的目标（goal）是让海龟旋转到一个特定的方向。一旦海龟完成旋转，应该会显示一条信息，传递目标（goal）的结果（result）:</p>
+<pre><code class="language-shell">[INFO] [turtlesim]: Rotation goal completed successfully
+</code></pre>
+<p><code>F</code> 键会取消一个在执行中的目标（goal）。</p>
+<p>试着按 <code>C</code> 键，然后在乌龟完成旋转之前按 <code>F</code> 键。在运行 <code>/turtlesim</code> node 的终端中，您将看到以下消息:</p>
+<pre><code class="language-shell">[INFO] [turtlesim]: Rotation goal canceled
+</code></pre>
+<p>不仅动作的 client（你在远程操作中的输入）可以取消一个目标，动作的 server（<code>/turtlesim</code> node）也可以取消一个目标。</p>
+<p>试着按 <code>D</code> 键，然后在第一次旋转前按 <code>G</code> 键就可以完成。在运行 <code>/turtlesim</code> node 的终端中，您将看到以下消息:</p>
+<pre><code class="language-shell">[WARN] [turtlesim]: Rotation goal received before a previous goal finished. Aborting previous goal
+</code></pre>
+<p>这个动作 server 选择放弃前一个目标，因为它收到了一个新的目标。但是不要假设每个动作 server 在得到一个新目标时都会选择放弃前一个目标。它可以选择做其他的事情，比如拒绝新的目标，或者在第一个目标完成后再执行第二个目标。</p>
+<h3 id="3-ros2-node-info"><a class="header" href="#3-ros2-node-info">3. ros2 node info</a></h3>
+<p>要查看 <code>/turtlesim</code> node 的动作列表，打开一个新的终端并运行以下命令:</p>
+<p>它将返回 <code>/turtlesim</code> 的订阅者、发布者、Service Server、动作 Server 和动作 Client 的列表:</p>
+<pre><code class="language-shell">&gt; ros2 node info /turtlesim
+/turtlesim
+  Subscribers:
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+    /turtle1/cmd_vel: geometry_msgs/msg/Twist
+  Publishers:
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+    /rosout: rcl_interfaces/msg/Log
+    /turtle1/color_sensor: turtlesim/msg/Color
+    /turtle1/pose: turtlesim/msg/Pose
+  Service Servers:
+    /clear: std_srvs/srv/Empty
+    /kill: turtlesim/srv/Kill
+    /reset: std_srvs/srv/Empty
+    /spawn: turtlesim/srv/Spawn
+    /turtle1/set_pen: turtlesim/srv/SetPen
+    /turtle1/teleport_absolute: turtlesim/srv/TeleportAbsolute
+    /turtle1/teleport_relative: turtlesim/srv/TeleportRelative
+    /turtlesim/describe_parameters: rcl_interfaces/srv/DescribeParameters
+    /turtlesim/get_parameter_types: rcl_interfaces/srv/GetParameterTypes
+    /turtlesim/get_parameters: rcl_interfaces/srv/GetParameters
+    /turtlesim/list_parameters: rcl_interfaces/srv/ListParameters
+    /turtlesim/set_parameters: rcl_interfaces/srv/SetParameters
+    /turtlesim/set_parameters_atomically: rcl_interfaces/srv/SetParametersAtomically
+  Service Clients:
+
+  Action Servers:
+    /turtle1/rotate_absolute: turtlesim/action/RotateAbsolute
+  Action Clients:
+
+</code></pre>
+<p>注意, <code>/turtlesim</code> node 的 <code>/turtle1/rotate_absolute</code> 动作属于动作 Servers。这意味着 <code>/turtlesim</code> 响应 <code>/turtle1/rotate_absolute</code> 动作 Client（显然，这里是指 <code>/teleop_turtle</code> node）并提供反馈。</p>
+<p><code>/teleop_turtle</code> node 拥有名为 <code>/turtle1/rotate_absolute</code> 动作的 Clients，这意味着它为该名称的动作发送目标。</p>
+<pre><code class="language-shell">&gt; ros2 node info /teleop_turtle
+/teleop_turtle
+  Subscribers:
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+  Publishers:
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+    /rosout: rcl_interfaces/msg/Log
+    /turtle1/cmd_vel: geometry_msgs/msg/Twist
+  Service Servers:
+    /teleop_turtle/describe_parameters: rcl_interfaces/srv/DescribeParameters
+    /teleop_turtle/get_parameter_types: rcl_interfaces/srv/GetParameterTypes
+    /teleop_turtle/get_parameters: rcl_interfaces/srv/GetParameters
+    /teleop_turtle/list_parameters: rcl_interfaces/srv/ListParameters
+    /teleop_turtle/set_parameters: rcl_interfaces/srv/SetParameters
+    /teleop_turtle/set_parameters_atomically: rcl_interfaces/srv/SetParametersAtomically
+  Service Clients:
+
+  Action Servers:
+
+  Action Clients:
+    /turtle1/rotate_absolute: turtlesim/action/RotateAbsolute
+</code></pre>
+<h3 id="4-ros2-action-list"><a class="header" href="#4-ros2-action-list">4. ros2 action list</a></h3>
+<p>要识别 ROS 图中的所有操作，请运行以下命令:</p>
+<pre><code class="language-shell">&gt; ros2 action list
+/turtle1/rotate_absolute
+</code></pre>
+<p>可以看到，<code>/turtle1/rotate_absolute</code> 是目前 ROS 图中唯一的动作元素。正如你之前看到的，它控制着海龟的旋转。您还知道，使用 <code>ros2 node info &lt;node_name&gt;</code> 命令查看该动作的 client（<code>/teleop_turtle</code> node 的一部分）和 server（<code>/turtlesim</code> node 的一部分）。</p>
+<h4 id="41-ros2-action-list--t"><a class="header" href="#41-ros2-action-list--t">4.1. ros2 action list -t</a></h4>
+<p>类似于 topic 和 service，动作（action）也是有类型的。要查找 <code>/turtle1/rotate_absolute</code> 动作的类型，运行以下命令:</p>
+<pre><code class="language-shell">&gt; ros2 action list -t
+/turtle1/rotate_absolute [turtlesim/action/RotateAbsolute]
+</code></pre>
+<p>在每个动作名称右边的括号中（在本例中仅为 <code>/turtle1/rotate_absolute</code> 一个动作）是动作的类型，本例中为 <code>turtlesim/action/RotateAbsolute</code>。当您希望从命令行或代码向该动作发送目标时，将需要此命令获取必要的信息。</p>
+<h3 id="5-ros2-action-info"><a class="header" href="#5-ros2-action-info">5. ros2 action info</a></h3>
+<p>您可以使用以下命令进一步查看 <code>/turtle1/rotate_absolute</code> 类型动作:</p>
+<pre><code class="language-shell">&gt; ros2 action info /turtle1/rotate_absolute
+Action: /turtle1/rotate_absolute
+Action clients: 1
+    /teleop_turtle
+Action servers: 1
+    /turtlesim
+</code></pre>
+<p>这告诉我们之前在每个 node 上运行 <code>ros2 node info</code> 命令时学到了什么：<code>/teleop_turtle</code> node 有一个动作 client，<code>/turtleim</code> node 有一个动作 server 用于 <code>/turtle1/rotate_absolute</code> 动作。</p>
+<h3 id="6-ros2-interface-show"><a class="header" href="#6-ros2-interface-show">6. ros2 interface show</a></h3>
+<p>在您自己发送或执行一个动作目标之前，您还需要知道动作类型的结构信息。</p>
+<p>回想一下，在运行命令 <code>ros2 action list -t</code> 时，您识别了 <code>/turtle1/rotate_absolute</code> 的动作类型，在您的终端中输入以下命令的动作类型:</p>
+<pre><code class="language-shell">&gt; ros2 interface show turtlesim/action/RotateAbsolute
+# The desired heading in radians
+float32 theta
+---
+# The angular displacement in radians to the starting position
+float32 delta
+---
+# The remaining rotation in radians
+float32 remaining
+</code></pre>
+<p>该消息的第一部分 <code>---</code> 之上是目标请求的结构（数据类型和名称。还记得开头讲解的吗？动作一开始是 client 向 goal service 发送请求，动作 server 做出该 goal service 的响应）。下一部分是结果（result）的结构。最后一部分是反馈（feedback topic 的消息体）的结构。</p>
+<h3 id="7-ros2-action-send_goal"><a class="header" href="#7-ros2-action-send_goal">7. ros2 action send_goal</a></h3>
+<p>现在让我们从命令行发送一个动作的目标，语法如下:</p>
+<pre><code class="language-shell">ros2 action send_goal &lt;action_name&gt; &lt;action_type&gt; &lt;values&gt;
+</code></pre>
+<p>其中 <code>&lt;values&gt;</code> 参数需要是 YAML 格式的数据。</p>
+<p>注意观察 turtlesim 窗口，在终端中输入以下命令:</p>
+<pre><code class="language-shell">&gt; ros2 action send_goal /turtle1/rotate_absolute turtlesim/action/RotateAbsolute &quot;{theta: 1.57}&quot;
+Waiting for an action server to become available...
+Sending goal:
+     theta: 1.57
+
+Goal accepted with ID: 291cc99a015d4a9b8ea257fb463ba7fa
+
+Result:
+    delta: -1.5520000457763672
+
+Goal finished with status: SUCCEEDED
+</code></pre>
+<p>你应该可以看到海龟在旋转，以及在你的终端中看到上述信息。</p>
+<p>所有动作的目标都有一个惟一的 ID，显示在返回消息中。您还可以看到结果，一个名为 <code>delta</code> 的字段，它是从起始位置（0 度）开始旋转的弧度信息（因为 Π/2≈1.57，即 90 度。回忆一下，如果向右是正方向，那么逆时针旋转为正角，顺时针旋转为负角，所以 1.57 为逆时针旋转 90 度）。</p>
+<p>要查看这个动作目标的反馈消息内容，请添加 <code>--feedback</code> 选项到 <code>ros2 action send_goal</code> 命令后面:</p>
+<pre><code class="language-shell">&gt; ros2 action send_goal /turtle1/rotate_absolute turtlesim/action/RotateAbsolute &quot;{theta: -1.57}&quot; --feedback
+Sending goal:
+   theta: -1.57
+
+Goal accepted with ID: e6092c831f994afda92f0086f220da27
+
+Feedback:
+  remaining: -3.1268222332000732
+
+Feedback:
+  remaining: -3.1108222007751465
+
+…
+
+Result:
+  delta: 3.1200008392333984
+
+Goal finished with status: SUCCEEDED
+</code></pre>
+<p>您将连续收到 N 多的反馈消息体（单位：弧度），直到目标最终完成，返回结果消息体。</p>
+<h2 id="小结"><a class="header" href="#小结">小结</a></h2>
+<p>动作类似于 service，但它允许您执行长时间运行的任务，提供多次连续的反馈消息，并且是可以取消的。</p>
+<p>机器人系统很可能使用动作来导航。一个动作的目标可以告诉机器人移动到一个位置。当机器人导航到位置时，它可以沿途发送一系列更新（即反馈），然后在到达目的地后发送最终结果消息。</p>
+<p>Turtlesim 有一个动作 server，动作 client 可以向它发送旋转乌龟的动作目标。在本教程中，您内省了 <code>/turtle1/rotate_absolute</code> 这个动作的信息，以便更好地了解什么是动作以及它们是如何工作的。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../02.ROS2教程/初级/理解 ROS2 parameters/intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../../02.ROS2教程/初级/使用 rqt_console/intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../02.ROS2教程/初级/理解 ROS2 parameters/intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../../02.ROS2教程/初级/使用 rqt_console/intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
